@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ym.demo.mapper.TJulyMapperCustom">
+  <resultMap id="BaseResultMap" type="com.ym.demo.pojo.TJuly">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="USERID" jdbcType="DECIMAL" property="userid" />
+    <result column="USERNAME" jdbcType="VARCHAR" property="username" />
+    <result column="PASSWORD" jdbcType="VARCHAR" property="password" />
+  </resultMap>
+
+
+  <insert id="addUser" parameterType="com.ym.demo.pojo.TJuly" >
+    insert  into T_JULY(USERID, USERNAME, PASSWORD) values (SEQ_JULY.nextval,#{username},#{password})
+  </insert>
+
+  <select id="login" parameterType="java.lang.String" resultType="com.ym.demo.pojo.TJuly">
+    select USERID,USERNAME,PASSWORD from  T_JULY where 1=1 and USERNAME=#{username} and PASSWORD = #{password}
+  </select>
+</mapper>
