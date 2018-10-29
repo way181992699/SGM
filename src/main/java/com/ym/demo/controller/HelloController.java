@@ -11,7 +11,6 @@ public class HelloController {
     private Hello hi;
 
 
-
     @PostMapping("/hi")
     public String hello() {
 

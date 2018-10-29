@@ -130,4 +130,20 @@ public class TheMainClass {
         System.out.println(a);
         System.out.println(new Timestamp(a.getTime()));
     }
+
+    @Test
+    public void fun5() {
+        String a = "asdf";
+        String b =  null;
+        String c = "false";
+        String d =  "true";
+
+        System.out.println(Boolean.valueOf(a));
+        System.out.println(Boolean.valueOf(b));
+        System.out.println(Boolean.valueOf(c));
+        System.out.println(Boolean.valueOf(d));
+
+
+
+    }
 }

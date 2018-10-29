@@ -1,5 +1,6 @@
 package com.ym.demo.pojo;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -8,6 +9,7 @@ public class DemoDoctor{
     @ApiModelProperty(value="id" ,required=true)
     private Integer id;
     @ApiModelProperty(value="医生姓名" ,required=true)
+//    @JsonIgnore
     private String name;
 
 
