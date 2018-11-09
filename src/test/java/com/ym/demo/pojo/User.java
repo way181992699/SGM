@@ -3,7 +3,7 @@ package com.ym.demo.pojo;
 public class User {
     private String name;
 
-    private String pwd;
+    private String pwd = "123";
 
 
     public String getName() {
@@ -28,5 +28,9 @@ public class User {
                 "name='" + name + '\'' +
                 ", pwd='" + pwd + '\'' +
                 '}';
+    }
+
+    protected  int number(){
+        return 1;
     }
 }

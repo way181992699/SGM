@@ -4,8 +4,8 @@ import com.ym.demo.pojo.User;
 import org.junit.Test;
 import org.springframework.util.CollectionUtils;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.sql.Time;
+import java.util.*;
 
 public class ArrayMain {
 
@@ -37,5 +37,24 @@ public class ArrayMain {
 //        System.out.println(list.isEmpty());
         System.out.println(CollectionUtils.isEmpty(list));
     }
+    @Test
+    public void fun1() {
+        List<User> list = null;
+        list=new ArrayList<>();
+        User str = new User();
+        for (User user : list) {
+            if (user.getName().equals("a"))
+                str.setPwd("1123");
+        }
+        System.out.println(list);
+        System.out.println(str);
+    }
+    @Test//
+    public void ListTest() {
+        List list =null;
+        ArrayList arrayList = new ArrayList(list);
+        LinkedList objects = new LinkedList(list);
+    }
+
 
 }

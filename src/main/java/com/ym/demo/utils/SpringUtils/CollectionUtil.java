@@ -1,12 +1,5 @@
 package com.ym.demo.utils.SpringUtils;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.util.CollectionUtils;
-import org.yaml.snakeyaml.util.ArrayUtils;
-
-import java.util.Arrays;
-import java.util.List;
-
 /**
  * 整理一些Spring框架的工具类
  * 此类为Spring处理集合的工具类
