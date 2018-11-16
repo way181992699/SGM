@@ -1,5 +1,7 @@
 package com.ym.demo.test;
 
+import com.ym.demo.jiekou.Game;
+import com.ym.demo.pojo.GameS;
 import com.ym.demo.utils.Judge;
 import com.ym.demo.utils.TDOA;
 import org.junit.Test;
@@ -205,5 +207,15 @@ public class TheMainClass {
         System.out.println(minute);
         System.out.println(((hour-1) * 60 + minute) / 6);
     }
+
+    @Test//比较接口和抽象类的自身的一些特性;
+    public void InterfaceTest() {
+        GameS gs = new GameS();
+        gs.getG().play();
+        GameS.fun1();
+        GameS.g1.playFun();
+        GameS.g1.play();
+    }
+
 
 }

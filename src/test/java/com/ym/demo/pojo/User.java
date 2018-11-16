@@ -1,6 +1,6 @@
 package com.ym.demo.pojo;
 
-public class User {
+public class User extends Person{
     private String name;
 
     private String pwd = "123";
