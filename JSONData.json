@@ -1,0 +1,378 @@
+{
+  "stationID": "G1192",
+  "stationName": "深中西岛",
+  "stationAreaID": "5949306",
+  "subDistrict": "福永街道",
+  "lat": 22.5872222222,
+  "lng": 113.8094444444,
+  "height": 4,
+  "isRain": 1,
+  "isWind": 2,
+  "isTemp": 1,
+  "date": 1539131760000,
+  "rainForHour": 0,
+  "rainForMinute": 0,
+  "rain06m": 0,
+  "rain12m": 0,
+  "rain30m": 0,
+  "rain01h": 0,
+  "rain02h": 0,
+  "rain03h": 0,
+  "rain06h": 0,
+  "rain12h": 0,
+  "rain24h": 0,
+  "rain48h": 0,
+  "rain72h": 0,
+  "windMaxSusLevel": 2,
+  "windMaxSusSpeed": 2.1,
+  "windMaxSusDirection": 11,
+  "windMaxSusSpotTime": 2,
+  "windMaxLevel": 1,
+  "windMaxSpeed": 1.4,
+  "windMaxDirection": 13,
+  "windMaxSpotTime": 2.7
+},{
+//        T_LOCALOBTMIND
+"ddatetime": "2018-10-09T23:00:00.000+0000",
+"obtid": "G1192",
+"wdidf": 18,
+"wdidd": 262,
+"wd2df": 14,
+"wd2dd": 277,
+"wd10df": 10,
+"wd10dd": 283,
+"wd3smaxdf": 24,
+"wd3smaxdd": 332,
+"wd3smaxtime": 15,
+"wd10maxdf": 10,
+"wd10maxdd": 283,
+"wd10maxtime": 0,
+"t": 260,
+"maxt": 260,
+"maxttime": 13,
+"mint": 259,
+"minttime": 21,
+"u": 82,
+"maxu": 83,
+"maxutime": 2,
+"minu": 81,
+"minutime": 48,
+"dp": 226,
+"p": 10133,
+"maxp": 10133,
+"maxptime": 58,
+"minp": 10127,
+"minptime": 1,
+"p0": null,
+"hourr": 0,
+"othfields": "<type>new</type><minr1>0</minr1>",
+"minr": 0,
+"r06m": 0,
+"r12m": 0,
+"r30m": 0,
+"r01h": 0,
+"r02h": 0,
+"r03h": 0,
+"r06h": 0,
+"r12h": 0,
+"r24h": 0,
+"r48h": 0,
+"r72h": 0,
+"hdrbz": "1111111111111       ",
+"datatype": 1,
+"rddatetime": 0,
+"checksts": 9,
+"checkstr": null,
+"keyid": 1266986215,
+"crttime": "2018-10-09T23:00:41.000+0000",
+"expid": 742199203,
+"r09h": 0
+},
+{
+"WD3SMAXDD": "一小时极大风速",
+"WD2DD": "2分钟最大风速",
+"WD10MAXDF": "十分钟最大风速",
+""
+},
+{
+"success": true,
+"time": 1539684509437,
+"reason": "success",
+"data": {
+"uId": 14,
+"unitName": "宝安海事局",
+"uInfoName": "深圳管理员",
+"uInfoPhone": "123",
+"sfPerson": {
+"tId": 3,
+"isF1": false,
+"isF2": false,
+"isF3": false,
+"isF4": false,
+"isW1": false,
+"isW2": false,
+"isW3": false,
+"isW4": false,
+"sfDuty": 2,
+"pId": 14
+},
+"smsperson": {
+"tId": 4,
+"pId": 14,
+"logSign": false,
+"logImportant": true,
+"logMonitor": false,
+"logMessage": false
+}
+},
+{
+"success": true,
+"time": 1539830373876,
+"reason": "success",
+"data": [
+{
+"uId": 14,
+"unitName": "宝安海事局",
+"uInfoName": "深圳管理员",
+"uInfoPhone": "123",
+"sfPerson": {
+"tId": 18,
+"isF1": true,
+"isF2": false,
+"isF3": false,
+"isF4": false,
+"isW1": false,
+"isW2": false,
+"isW3": false,
+"isW4": false,
+"sfDuty": 2,
+"pId": 14
+},
+"job": "",
+"smsPerson": null
+},
+{
+"uId": 45,
+"unitName": "罗湖区三防办",
+"uInfoName": "陈海泉",
+"uInfoPhone": "12345",
+"sfPerson": null,
+"job": "",
+"smsPerson": null
+}
+]
+},
+{
+"areaID": "5949301",
+"areaName": "罗湖",
+"obtResList": [
+{
+"obtid": "G3522",
+"obtname": "蔡屋围基地",
+"rainSum": 0,
+"maxRainHour": 21.1,
+"maxRainHourTime": 1537761600000,
+"maxWind10df": 0,
+"maxWind3sdf": 0,
+"maxWind3sdfTime": 0
+},
+{
+"obtid": "G3523",
+"obtname": "桂园",
+"rainSum": 0,
+"maxRainHour": 17.7,
+"maxRainHourTime": 1537761600000,
+"maxWind10df": 0,
+"maxWind3sdf": 0,
+"maxWind3sdfTime": 0
+},
+{
+"obtid": "G3524",
+"obtname": "罗芳",
+"rainSum": 0,
+"maxRainHour": 4.2,
+"maxRainHourTime": 1537988400000,
+"maxWind10df": 0,
+"maxWind3sdf": 0,
+"maxWind3sdfTime": 0
+},
+{
+"obtid": "G3527",
+"obtname": "清水河",
+"rainSum": 0,
+"maxRainHour": 20.9,
+"maxRainHourTime": 1537761600000,
+"maxWind10df": 0,
+"maxWind3sdf": 0,
+"maxWind3sdfTime": 0
+},
+{
+"obtid": "G3534",
+"obtname": "深圳水库",
+"rainSum": 0,
+"maxRainHour": 7.1,
+"maxRainHourTime": 1537761600000,
+"maxWind10df": 0,
+"maxWind3sdf": 0,
+"maxWind3sdfTime": 0
+},
+{
+"obtid": "G3726",
+"obtname": "大梧桐",
+"rainSum": 0,
+"maxRainHour": 5.8,
+"maxRainHourTime": 1537761600000,
+"maxWind10df": 0,
+"maxWind3sdf": 0,
+"maxWind3sdfTime": 0
+},
+{
+"obtid": "G1146",
+"obtname": "罗芳水质厂",
+"rainSum": 0,
+"maxRainHour": 9.8,
+"maxRainHourTime": 1538071200000,
+"maxWind10df": 0,
+"maxWind3sdf": 0,
+"maxWind3sdfTime": 0
+},
+{
+"obtid": "G3577",
+"obtname": "翠竹",
+"rainSum": 0,
+"maxRainHour": 10.9,
+"maxRainHourTime": 1537761600000,
+"maxWind10df": 0,
+"maxWind3sdf": 0,
+"maxWind3sdfTime": 0
+},
+{
+"obtid": "G3581",
+"obtname": "东门",
+"rainSum": 0,
+"maxRainHour": 9.8,
+"maxRainHourTime": 1537761600000,
+"maxWind10df": 0,
+"maxWind3sdf": 0,
+"maxWind3sdfTime": 0
+},
+{
+"obtid": "G3630",
+"obtname": "草埔",
+"rainSum": 0,
+"maxRainHour": 4.8,
+"maxRainHourTime": 1537761600000,
+"maxWind10df": 0,
+"maxWind3sdf": 0,
+"maxWind3sdfTime": 0
+},
+{
+"obtid": "G3659",
+"obtname": "小梧桐",
+"rainSum": 0,
+"maxRainHour": 10.2,
+"maxRainHourTime": 1537761600000,
+"maxWind10df": 0,
+"maxWind3sdf": 0,
+"maxWind3sdfTime": 0
+},
+{
+"obtid": "G3676",
+"obtname": "蔡屋围",
+"rainSum": 0,
+"maxRainHour": 21.5,
+"maxRainHourTime": 1537761600000,
+"maxWind10df": 0,
+"maxWind3sdf": 0,
+"maxWind3sdfTime": 0
+},
+
+
+{
+"success": true,
+"time": 1540267522529,
+"reason": "success",
+"data": [
+  {
+  "archID": 44,
+  "archName": "深圳测试",
+  "personList": [
+            {
+            "archID": 44,
+            "perID": 14,
+            "perName": "深圳管理员-01",
+            "phone": "123"
+            },
+            {
+            "archID": 44,
+            "perID": 45,
+            "perName": "陈海泉",
+            "phone": "12345"
+            },
+            {
+            "archID": 44,
+            "perID": 46,
+            "perName": "陈海泉test-chq",
+            "phone": "123"
+            }
+            ]
+            },
+  {
+  "archID": 56,
+  "archName": "深圳市气象局",
+  "personList": []
+  }
+]
+},
+
+
+
+{
+  "success": true,
+  "time": 1540349640042,
+  "reason": "success",
+  "data": [
+          {
+          "areaName": "罗湖",
+                    "obtResList": [
+                    {
+                    "obtid": "G3726",
+                    "obtname": "大梧桐",
+                    "rainSum": 0,
+                    "maxRainHour": 7.4,
+                    "maxRainHourTime": 1539648000000,
+                    "maxWind10df": 6.1,
+                    "maxWind3sdf": 10.7,
+                    "maxWind3sdfTime": 1539921600000
+                    },
+                    {
+                    "obtid": "G3577",
+                    "obtname": "翠竹",
+                    "rainSum": 0,
+                    "maxRainHour": 7.4,
+                    "maxRainHourTime": 1539648000000,
+                    "maxWind10df": 6.1,
+                    "maxWind3sdf": 10.7,
+                    "maxWind3sdfTime": 1539921600000
+                    },
+                    {
+                    "obtid": "G3581",
+                    "obtname": "东门",
+                    "rainSum": 0,
+                    "maxRainHour": 7.4,
+                    "maxRainHourTime": 1539648000000,
+                    "maxWind10df": 6.1,
+                    "maxWind3sdf": 10.7,
+                    "maxWind3sdfTime": 1539921600000
+                    },
+                    {
+                    "obtid": "G3630",
+                    "obtname": "草埔",
+                    "rainSum": 0,
+                    "maxRainHour": 7.4,
+                    "maxRainHourTime": 1539648000000,
+                    "maxWind10df": 6.1,
+                    "maxWind3sdf": 10.7,
+                    "maxWind3sdfTime": 1539921600000
+                    },
+
