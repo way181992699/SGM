@@ -32,6 +32,7 @@ public class KeyWordFilter {
 				String scontent = (String) enu.nextElement();
 				patternBuffer.append(scontent + "|");
 				System.out.println(scontent);
+//				System.out.println("**********");
 				keywordsCount ++;
 			}
 			patternBuffer.deleteCharAt(patternBuffer.length() - 1);

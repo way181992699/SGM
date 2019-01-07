@@ -15,6 +15,9 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.TimeZone;
 
+/**
+ * 草稿类(随便测试玩玩)
+ */
 public class TheMainClass {
 
     /**
@@ -364,7 +367,9 @@ public class TheMainClass {
 
 }
 
-
+// if (Judge.isChinese(e.getMessage().charAt(0))) {
+//                return Result.failed(e.getMessage());
+//            }
 
 
 

@@ -7,6 +7,13 @@ public class User extends Person implements Comparable<User> {
 
     private String pwd = "123";
 
+    public User() {
+    }
+
+    public User(String name, String pwd) {
+        this.name = name;
+        this.pwd = pwd;
+    }
 
     public String getName() {
         return name;

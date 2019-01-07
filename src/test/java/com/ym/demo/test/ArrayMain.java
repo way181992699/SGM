@@ -1,7 +1,8 @@
 package com.ym.demo.test;
 
+import com.ym.demo.pojo.A;
+import com.ym.demo.pojo.CompareBean;
 import com.ym.demo.pojo.User;
-import io.swagger.models.auth.In;
 import org.junit.Test;
 import org.springframework.util.CollectionUtils;
 
@@ -202,8 +203,8 @@ public class ArrayMain {
 
     @Test//测试list 的split方法
     public void splitList() {
-       String str ="1";
-       String str1 ="1，2";
+        String str = "1";
+        String str1 = "1，2";
         String[] split = str.split(",");
         List<String> strings = Arrays.asList(split);
         System.out.println(strings);
@@ -215,4 +216,54 @@ public class ArrayMain {
 
     }
 
+
+    @Test//
+    public void fun5() {
+        List<Integer> aa = null;
+        aa.add(2);
+        System.out.println(aa);
+
+        A a = new A();
+        a.getIntegerList().add(1);
+        System.out.println("asdf");
+        System.out.println(a);
+
+
+    }
+
+    @Test//
+    public void fun6() {
+        List<User> aa = new ArrayList<>();
+        List<User> bb = new ArrayList<>();
+        User a1 = new User("a1", "123");
+        User a2 = new User("a2", "123");
+        User a3 = new User("a3", "123");
+        User b1 = new User("a3", "123");
+        User b2 = new User("a2", "123");
+        aa.add(a1);
+        aa.add(a2);
+        aa.add(a3);
+        bb.add(b1);
+        bb.add(b2);
+        System.out.println(aa);
+        System.out.println(bb);
+        System.out.println(aa.containsAll(bb));
+        aa.removeAll(bb);
+        System.out.println(aa);
+        aa = null;
+        aa = bb;
+        System.out.println(aa);
+    }
+
+    @Test//compare 测试
+    public void fun7() {
+        List<CompareBean> c1 = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            c1.add(new CompareBean("張三" + i, (int) (i + (Math.random() * 100)), i % 2 == 0 ? "男" : "女"));
+        }
+        System.out.println(c1);
+        Collections.sort(c1);
+        System.out.println(c1);
+        List<CompareBean> c2 = new ArrayList<>();
+    }
 }
