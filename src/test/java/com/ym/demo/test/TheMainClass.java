@@ -358,6 +358,17 @@ public class TheMainClass {
         }
     }
 
+    @Test//测试Integer和int的比较
+    public void IntegerTest() {
+       Integer a = new Integer(1);
+        Integer c = new Integer(1);
+       int b =1 ;
+        System.out.println(a == b);
+        System.out.println(a.equals(b));
+        System.out.println(a == c);
+        System.out.println(a.equals(c));
+    }
+
     public Object getUser() {
         User u = new User();
         u.setName("x");

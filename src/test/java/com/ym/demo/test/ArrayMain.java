@@ -266,4 +266,35 @@ public class ArrayMain {
         System.out.println(c1);
         List<CompareBean> c2 = new ArrayList<>();
     }
+
+    @Test//compare 体验可变参数
+    public void fun8() {
+//        Double avg = getAvg(1.5, 3.5, 7.0, 13.0);
+        Double avg = getAvg(null, null, null,7.0, 13.0);
+
+        System.out.println(avg);
+
+    }
+
+    public static Double getAvg(Double... a) {
+        double sum = 0.0;
+        int isEmpty = 0;
+        for (int i = 0; i < a.length; i++) {
+            if (null == a[i]) {
+                isEmpty++;
+                continue;
+            }
+            sum += a[i];
+        }
+        if (a.length > 0) {
+            if (isEmpty == a.length) {
+                return null;
+            } else if (isEmpty > 0 && isEmpty < a.length) {
+                return sum /(a.length - isEmpty);
+            }
+        }
+        return null;
+    }
+
+
 }

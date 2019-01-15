@@ -48,7 +48,24 @@ public class TimeTest {
         System.out.println(dateA.before(dateB));
         System.out.println(dateB.before(dateA));
         System.out.println(dateB.after(dateA));
+
     }
+
+
+    @Test //两个时间的前后时间比较
+    public void DateEquals() throws ParseException {
+
+        Long a = Long.valueOf(1546071184);
+        Long b = Long.valueOf(1546071184);
+
+        Date dateA = new Date(a*1000);//16:13:04 CST 2018
+//        Date dateB = ;//16:17:29 CST 2018
+        System.out.println(dateA.equals(new Date(b*1000)));
+
+    }
+
+
+
 
 
 }
