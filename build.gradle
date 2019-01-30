@@ -23,6 +23,8 @@ sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
+    maven { url "http://10.153.114.154:8081/repository/maven-public/" }
+    maven { url "http://10.153.114.154:8081/repository/maven-spring/" }
 }
 
 configurations {
@@ -47,12 +49,24 @@ dependencies {
     compile group: 'com.zaxxer', name: 'HikariCP', version: '3.1.0'
     compile group: 'org.mybatis.spring.boot', name: 'mybatis-spring-boot-starter', version: '1.3.0'
     compile group: 'org.mybatis.generator', name: 'mybatis-generator-core', version: '1.3.5'
-// https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient
+    // https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient
     compile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.2'
 
+//poi为操作excel表格(创建,读取,导出等)相关jar包
     compile group: 'org.apache.poi', name: 'poi', version: '3.14-beta1'
     compile group: 'org.apache.poi', name: 'poi-ooxml', version: '3.14-beta1'
     compile group: 'org.apache.poi', name: 'poi-ooxml-schemas', version: '3.14-beta1'
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-aop
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-aop', version: '2.1.1.RELEASE'
+
+// https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 工具类
+    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.4'
+// https://mvnrepository.com/artifact/com.mchange/mchange-commons-java
+    compile group: 'com.mchange', name: 'mchange-commons-java', version: '0.2.12'
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-devtools 熱部署
+    compile group: 'org.springframework.boot', name: 'spring-boot-devtools', version: '2.0.4.RELEASE'
+
+    compile('com.ym:base:1.0.1')
 
 
 }

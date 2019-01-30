@@ -270,9 +270,45 @@ public class ArrayMain {
     @Test//compare 体验可变参数
     public void fun8() {
 //        Double avg = getAvg(1.5, 3.5, 7.0, 13.0);
-        Double avg = getAvg(null, null, null,7.0, 13.0);
+        Double avg = getAvg(null, null, null, 7.0, 13.0);
 
         System.out.println(avg);
+
+    }
+
+
+    @Test
+    public void ListUtils() {
+        List list1 = new ArrayList();
+        list1.add("1111");
+        list1.add("2222");
+        list1.add("3333");
+        List list2 = new ArrayList();
+        list2.add("3333");
+        list2.add("4444");
+        list2.add("5555");
+        //并集
+        //list1.addAll(list2); // addAll命令，会把第2个list中的数据添加到第一个list中
+        //System.out.println(list1);//[1111, 2222, 3333, 3333, 4444, 5555]
+        //交集
+        // retainAll命令，返回的是一个boolean值，如果结果修改了第一个list就返回true，没修改就返回false，结果会直接修改第一个list，如果第2个list是第一个的子集，就不会修改第一个list。retainAll命令返回的是两个list同时包含的内容
+        //1、首先调用retainAll的方法
+        //2、通过判断结果集合是否大于0，来确定是否存在交集。不能通过方法返回的True和False来判断。
+        //3、当集合A的大小改变的时候返回的是True,大小没有改变的时候返回的是False
+//        boolean b = list1.retainAll(list2);
+//        System.out.println(b);
+        //System.out.println(list1);//[3333]
+        //差集
+//        list1.removeAll(list2);// removeAll命令，使用第一个list的内容去减第2个list，也就是说第1个list的结果保留第2个list中没有的内容。
+//        System.out.println(list1);//[1111, 2222]
+        //无重复并集
+//        list2.removeAll(list1);
+//        list1.addAll(list2);
+//        System.out.println(list1);//[1111, 2222, 3333, 4444, 5555]
+//        Iterator<String> it = list1.iterator();
+//        while (it.hasNext()) {
+//            System.out.println(it.next());
+//        }
 
     }
 
@@ -290,7 +326,7 @@ public class ArrayMain {
             if (isEmpty == a.length) {
                 return null;
             } else if (isEmpty > 0 && isEmpty < a.length) {
-                return sum /(a.length - isEmpty);
+                return sum / (a.length - isEmpty);
             }
         }
         return null;

@@ -10,10 +10,7 @@ import org.junit.Test;
 import java.sql.Timestamp;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Arrays;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.TimeZone;
+import java.util.*;
 
 /**
  * 草稿类(随便测试玩玩)
@@ -360,13 +357,39 @@ public class TheMainClass {
 
     @Test//测试Integer和int的比较
     public void IntegerTest() {
-       Integer a = new Integer(1);
+        Integer a = new Integer(1);
         Integer c = new Integer(1);
-       int b =1 ;
+        int b = 1;
         System.out.println(a == b);
         System.out.println(a.equals(b));
         System.out.println(a == c);
         System.out.println(a.equals(c));
+    }
+
+    @Test//测试continue和break的测试作用范围
+    //竟测试如果存在多个for循环, continue成立时,就不会继续执行continue之后的代码(如果continue后面仍有代码的话),并重新开始当前循环
+    //break则是直接停止当前循环,跳到上一层循环继续执行(如果上一层循环仍成立的话).
+    public void forTest() {
+        List<String> list1 = new ArrayList();
+        list1.add("3333");
+        list1.add("1111");
+        list1.add("2222");
+        List<String> list2 = new ArrayList();
+        list2.add("3333");
+        list2.add("4444");
+        list2.add("5555");
+        for (String s : list1) {
+            Boolean a = false;
+            for (String s1 : list2) {
+                if (s.equals(s1)) {
+                    System.out.println("same");
+//                    continue;
+                    break;
+                }
+                System.out.println("hello world!");
+            }
+            System.out.println("hello world!");
+        }
     }
 
     public Object getUser() {

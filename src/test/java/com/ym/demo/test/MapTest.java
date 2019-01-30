@@ -31,6 +31,7 @@ public class MapTest {
         Object clone = ((HashMap<String, Integer>) map).clone();
         System.out.println(clone);
 
+
 //        Map<String, Integer> mapClone = ((HashMap<String, Integer>) map).clone();
     }
 
