@@ -79,4 +79,12 @@ public class StringTest {
         System.out.println(integer + 5);
     }
 
+    //
+    @Test //测试字符串
+    public void stringIsEmpty() {
+        String str = "宝安区";
+        System.out.println(str.substring(0, 2));
+        System.out.println(str.length());
+    }
+
 }

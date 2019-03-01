@@ -1,5 +1,8 @@
 package com.ym.demo.test;
 
+import com.ym.demo.enumTest.EnumTest;
+import com.ym.demo.enumTest.IConstants;
+import com.ym.demo.exception.BaseException;
 import com.ym.demo.pojo.GameS;
 import com.ym.demo.pojo.User;
 import com.ym.demo.utils.Judge;
@@ -399,11 +402,85 @@ public class TheMainClass {
         return u;
     }
 
+    @Test//异常博捕获类测试.
+    public void ExcptionTest() {
+        BaseException baseException = new BaseException(BaseException.ExceptionCode.PARAMS_INCORRECT, "参数值不合法,服务器无法进行有效的计算");
+//        throw new BaseException(BaseException.ExceptionCode.PARAMS_INCORRECT, "传参有误!请检查!");
+        //            throw new BaseException(BaseException.ExceptionCode.SERVICE_UNAVAILABLE, "参数值不合法,服务器无法进行有效的计算");
+
+        BaseException.ExceptionCode c1 = baseException.getCode();
+        BaseException.ExceptionCode params_incorrect = BaseException.ExceptionCode.valueOf("SERVICE_UNAVAILABLE");
+//        params_incorrect.setCode(1213);
+        System.out.println(params_incorrect.getCode());
+
+        int code = c1.getCode();
+
+        System.out.println(code);
+    }
+
+    @Test//枚举测试.
+    public void enumTest() {
+        //测试原始接口
+        String fri = IConstants.FRI;
+        System.out.println(fri);
+        System.out.println(EnumTest.FRI);
+    }
+
+    @Test//2019-2-12,今天太困,所以这个test类主要用于玩耍来抵消困意
+    public void noSleep() {
+//        回味以前.循环出一个九九乘法表吧
+        for (int i = 1; i <= 9; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print(j + "x" + i + "=" + (j * i) + "  ");
+            }
+            System.out.println();
+        }
+
+
+    }
+
+    public static void main(String[] args) {
+        //终于清醒一些了,在来个三角形吧
+//                *
+//               ***
+//              *****
+        Scanner scanner = new Scanner(System.in);
+        while (true) {
+            int length = scanner.nextInt();
+            if (length == 0)
+                break;
+            for (int i = 1; i <= length; i++) {
+                int j = 0;
+                while (j < length - i) {
+                    System.out.print(" ");
+                    j++;
+                }
+                j = 0;
+                while (j < (1 + (2 * (i - 1)))) {
+                    System.out.print("*");
+                    j++;
+                }
+                System.out.println();
+            }
+        }
+    }
+
+    @Test
+    public void fun77() {
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        System.out.println(format.format(new Date()));
+            String a = "asdf";
+        System.out.println(a.contains(""));
+
+    }
+
+
 }
 
 // if (Judge.isChinese(e.getMessage().charAt(0))) {
 //                return Result.failed(e.getMessage());
 //            }
+
 
 
 

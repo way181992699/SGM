@@ -65,7 +65,10 @@ dependencies {
     compile group: 'com.mchange', name: 'mchange-commons-java', version: '0.2.12'
     // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-devtools 熱部署
     compile group: 'org.springframework.boot', name: 'spring-boot-devtools', version: '2.0.4.RELEASE'
-
+    //mongodb 數據庫
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-mongodb', version: '2.1.2.RELEASE'
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-redis redis数据库
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-redis', version: '2.0.4.RELEASE'
     compile('com.ym:base:1.0.1')
 
 

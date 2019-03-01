@@ -40,8 +40,8 @@ public class TimeTest {
         Long a = Long.valueOf(1546071184);
         Long b = Long.valueOf(1546071449);
 
-        Date dateA = new Date(a*1000);//16:13:04 CST 2018
-        Date dateB = new Date(b*1000);//16:17:29 CST 2018
+        Date dateA = new Date(a * 1000);//16:13:04 CST 2018
+        Date dateB = new Date(b * 1000);//16:17:29 CST 2018
         System.out.println(dateA);
         System.out.println(dateB);
         System.out.println(dateA.after(dateB));
@@ -58,14 +58,22 @@ public class TimeTest {
         Long a = Long.valueOf(1546071184);
         Long b = Long.valueOf(1546071184);
 
-        Date dateA = new Date(a*1000);//16:13:04 CST 2018
+        Date dateA = new Date(a * 1000);//16:13:04 CST 2018
 //        Date dateB = ;//16:17:29 CST 2018
-        System.out.println(dateA.equals(new Date(b*1000)));
+        System.out.println(dateA.equals(new Date(b * 1000)));
 
     }
 
+    //1551196800000
+    @Test //时间戳转时间格式测试
+    public void DateFormatTest1()  {
 
+        Long a = Long.valueOf(1551196800);
+        Long b = Long.valueOf(1546071184);
 
+        Date dateA = new Date(a * 1000);//16:13:04 CST 2018
+//        Date dateB = ;//16:17:29 CST 2018
+        System.out.println(dateA);
 
-
+    }
 }
