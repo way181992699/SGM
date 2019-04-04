@@ -2,8 +2,10 @@ package com.ym.demo.test;
 
 import com.ym.demo.pojo.A;
 import com.ym.demo.pojo.CompareBean;
+import com.ym.demo.pojo.UrlCount;
 import com.ym.demo.pojo.User;
 import org.junit.Test;
+import org.springframework.beans.BeanUtils;
 import org.springframework.util.CollectionUtils;
 
 import java.util.*;
@@ -36,7 +38,10 @@ public class ArrayMain {
         // list = null;
 //        System.out.println(list.size());
 //        System.out.println(list.isEmpty());
-        System.out.println(CollectionUtils.isEmpty(list));
+//        System.out.println(CollectionUtils.isEmpty(list));
+        List<String> strings = new ArrayList<>();
+        strings.add(null);
+        System.out.println(strings);
     }
 
     @Test
@@ -332,5 +337,117 @@ public class ArrayMain {
         return null;
     }
 
+    @Test//集合去重
+    public void listDistince() {
+        List<Integer> integerList = new ArrayList<>();
+        integerList.add(1);
+        integerList.add(1);
+        integerList.add(2);
+        integerList.add(2);
+        integerList.add(2);
+        integerList.add(2);
+        integerList.add(3);
+        integerList.add(4);
+        integerList.add(null);
+        integerList.removeAll(Collections.singleton(null));//去除null元素
+        System.out.println(integerList);
+        //本质是把ArrayList集合转为HashSet集合,让HashSet的特性剔除元素;
+        HashSet<Integer> integers = new HashSet<>(integerList);
+        integerList.clear();
+        integerList.addAll(integers);
+        System.out.println(integerList);
+    }
+
+    @Test//集合内部比较 排序
+    //  @Override
+    //    public int compareTo(UrlCount o) {
+    //        if (o.count == count)
+    //            return 0;
+    //        else if (o.count > count) //从大到小排序
+    //            return 1;
+    //        else
+    //            return -1;
+    //    }
+    public void listComparable() {
+        List<UrlCount> counts = new ArrayList<>();
+        for (int i = 0; i < 20; i++) {
+            long v = (long) (Math.random() * (100 - 1));
+            counts.add(new UrlCount("type" + i, "url" + i, "content" + i, v));
+        }
+        System.out.println(counts);
+        Collections.sort(counts);
+        System.out.println(counts);
+        List<UrlCount> counts1 = counts.subList(0, 10);
+        System.out.println(counts1);
+        System.out.println(counts1.size());
+
+
+    }
+
+    //字符串转数组
+    @Test
+    public void testFun() {
+        String str = "[[22.73916667, 113.7541667], [22.73555556, 113.7333333], [22.41666667, 113.7822222], [22.21777778, 113.8358333], [22.26772222, 113.839], [22.27311111,\\n\\n113.8473889], [22.33333333, 113.8691111], [22.42880556, 113.8691111], [22.47236111, 113.9478056], [22.51005556, 113.9950556]]";
+        String replace = str.replace("\\n\\n", "").trim();
+        String substring = replace.substring(1, replace.length() - 1);
+
+        System.out.println(substring.trim());
+        String[] split = substring.split("\\[], ");
+        for (String s : split) {
+            System.out.println(s);
+        }
+
+    }
+
+    //字符串转数组
+    @Test
+    public void testFun1() {
+        List<String> strings = new ArrayList<>();
+        strings.add(null);
+        System.out.println(strings);
+        System.out.println(CollectionUtils.isEmpty(strings));
+        String s = strings.get(0);
+
+        int i = 57;
+        System.out.println(i - (i % 5));
+
+    }
+
+    @Test //查看集合引用
+    public void funReference() throws CloneNotSupportedException {
+        List<User> list = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            list.add(new User("张三" + i, i * 2 + ""));
+        }
+        System.out.println(list);
+        List<User> l = new ArrayList<>();
+        List<User> l1 = new ArrayList<>();
+        for (User user1 : list) {
+            User user = new User();
+            BeanUtils.copyProperties(user1, user);
+            l.add(user);
+        }
+        l.get(0).setName("李四");
+        System.out.println(l);
+        System.out.println(list);
+
+//        User user = new User("王五","123");
+//        User u = new User();
+//        u = user; //这仅仅是把一个引用 指向另一个引用,  用的 都还是同一个地址, 该行代码无任何意义.
+//        user.setName("wangwu");
+//        System.out.println(u);//User{name='wangwu', pwd='123'}
+
+//        User user = new User("王五", "123");
+//        User u = new User(user); //浅拷贝核心代码 --方法1
+//        user.setName("wangwu");
+//        System.out.println(u); //User{name='王五', pwd='123'}
+
+        User user = new User("王五", "123");
+        User u = (User) user.clone(); //浅拷贝核心代码 --方法1
+        user.setName("wangwu11");
+        System.out.println(u); //User{name='王五', pwd='123'}
+
+
+    }
 
 }

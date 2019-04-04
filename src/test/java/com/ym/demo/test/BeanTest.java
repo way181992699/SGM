@@ -60,7 +60,7 @@ public class BeanTest extends User {
     @Test//测试父类与子类的成员属性引用
     public void BeanExtendsTest() {
         Person p = new Person();
-        p.setAge("18");
+        p.setSex("18");
         User u = new User();
         BeanUtils.copyProperties(p, u);//把父类的值copy给子类
         u.setPwd("1345");
@@ -69,7 +69,7 @@ public class BeanTest extends User {
 
 //        User u2 = (User) new Person();报错:java.lang.ClassCastException: com.ym.demo.pojo.Person cannot be cast to com.ym.demo.pojo.User
         Person p1 = new User();
-        p1.setAge("19");
+        p1.setSex("19");
         User u1 = (User) p1;
         System.out.println(u1.getAge());
 
@@ -111,6 +111,15 @@ public class BeanTest extends User {
     @Test //测试拷贝
     public void copyBean() {
         User u = new User();
+
+
+    }
+
+    @Test //测试get方法
+    public void getTest() {
+        User u = new User();
+        System.out.println(u.getName());
+        System.out.println(u.getPwd());
 
 
     }

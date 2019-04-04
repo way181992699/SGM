@@ -72,23 +72,7 @@ public class TheMainClass {
 
     //T_LOCALOBTDAYD    --- 自动站天表
     //SZIDC.T_LOCALOBTHOURD  --- 自动站小时表
-    @Test
-    public void fun1() {
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTime(new Date());
-        long timeInMillis = calendar.getTimeInMillis();
-        int i = calendar.get(calendar.MINUTE);
-        int dat = calendar.get(calendar.DAY_OF_MONTH);
-        System.out.println(dat);
-        calendar.add(Calendar.DAY_OF_MONTH, -5);
-        int dat1 = calendar.get(calendar.DAY_OF_MONTH);
-        System.out.println(dat1);
-        System.out.println(calendar.HOUR_OF_DAY);
-        System.out.println(calendar.get(calendar.HOUR_OF_DAY));
-        System.out.println(i);
-        System.out.println(new Timestamp(timeInMillis));
 
-    }
 
     @Test
     public void fun2() {
@@ -469,17 +453,56 @@ public class TheMainClass {
     public void fun77() {
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         System.out.println(format.format(new Date()));
-            String a = "asdf";
+        String a = "asdf";
         System.out.println(a.contains(""));
 
+        int i = 10;
+        int i0 = 0;
+        System.out.println(i % 10);
+        Integer integer = new Integer(0);
+        System.out.println(integer);
+        String s = integer.toString();
+        System.out.println(s);
     }
 
+    @Test
+    public void fun777() {
+        String a = "10";
+        List<String> strings = new ArrayList<>();
+        for (int i = 0; i < 20; i++) {
+            strings.add(i + "");
+        }
+        int aa = 0;
+        for (String string : strings) {
+            if (string.equals(a)) {
+                System.out.println();
+                break;
+            }
+            aa++;
+            System.out.println(aa);
+        }
+    }
+
+    @Test //类型互换
+    public void fun7777() {
+//        Integer a = 1;
+//        Short b = 1;
+//        System.out.println(b==(short)1);
+    double a =1.23;
+    int b =3;
+        double v = a * b;
+        System.out.println(v);
+
+        int c =3612;
+        double v1 = c * 0.001;
+        System.out.println(v1);
+    }
 
 }
 
 // if (Judge.isChinese(e.getMessage().charAt(0))) {
 //                return Result.failed(e.getMessage());
-//            }
+//            }forbiddendedicated
 
 
 

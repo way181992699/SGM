@@ -34,5 +34,15 @@ public class MapTest {
 
 //        Map<String, Integer> mapClone = ((HashMap<String, Integer>) map).clone();
     }
+    @Test//测试Map获取空的key的返回情况
+    public void MapGetNullKey() {
+        Map<Integer,String> map = new HashMap<>();
+        map.put(1,"10");
+        map.put(2,"20");
+
+        String s = map.get(3);
+        System.out.println(map.containsKey(3));
+        System.out.println(s);
+    }
 
 }

@@ -3,28 +3,37 @@ package com.ym.demo.pojo;
 import java.io.Serializable;
 import java.util.Objects;
 
-public class User extends Person implements Comparable<User>, Cloneable, Serializable {
+public class UserRes extends Person implements Comparable<UserRes>, Cloneable, Serializable {
     private String name;
 
     private String pwd = "123";
 
     private int age;
 
-    public User(String name, String pwd, int age) {
+    private String lover;
+
+    public UserRes(String name, String pwd, int age) {
         this.name = name;
         this.pwd = pwd;
         this.age = age;
     }
 
-    public User() {
+    public UserRes() {
     }
 
-    public User(User u) { //浅拷贝核心代码
+    public UserRes(UserRes u) { //浅拷贝核心代码
         this.name = u.getName();
         this.pwd = u.getPwd();
         this.age = u.getAge();
     }
 
+    public String getLover() {
+        return lover;
+    }
+
+    public void setLover(String lover) {
+        this.lover = lover;
+    }
 
     public int getAge() {
         return age;
@@ -34,7 +43,7 @@ public class User extends Person implements Comparable<User>, Cloneable, Seriali
         this.age = age;
     }
 
-    public User(String name, String pwd) {
+    public UserRes(String name, String pwd) {
         this.name = name;
         this.pwd = pwd;
     }
@@ -57,10 +66,11 @@ public class User extends Person implements Comparable<User>, Cloneable, Seriali
 
     @Override
     public String toString() {
-        return "User{" +
+        return "UserRes{" +
                 "name='" + name + '\'' +
                 ", pwd='" + pwd + '\'' +
                 ", age=" + age +
+                ", lover='" + lover + '\'' +
                 '}';
     }
 
@@ -68,7 +78,7 @@ public class User extends Person implements Comparable<User>, Cloneable, Seriali
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        User user = (User) o;
+        UserRes user = (UserRes) o;
         return Objects.equals(name, user.name) &&
                 Objects.equals(pwd, user.pwd);
     }
@@ -84,7 +94,7 @@ public class User extends Person implements Comparable<User>, Cloneable, Seriali
     }
 
     @Override
-    public int compareTo(User o) {
+    public int compareTo(UserRes o) {
         return Integer.valueOf(this.pwd) - Integer.valueOf(o.pwd);
     }
 
