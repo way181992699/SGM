@@ -498,7 +498,14 @@ public class TheMainClass {
         System.out.println(v1);
     }
 
+    @Test //枚举测试
+    public void funEnum() {
+        System.out.println(EnumTest.FRI.toString());
+    }
+
 }
+
+
 
 // if (Judge.isChinese(e.getMessage().charAt(0))) {
 //                return Result.failed(e.getMessage());
