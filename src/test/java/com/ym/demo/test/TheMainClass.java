@@ -4,12 +4,14 @@ import com.ym.demo.enumTest.EnumTest;
 import com.ym.demo.enumTest.IConstants;
 import com.ym.demo.exception.BaseException;
 import com.ym.demo.pojo.GameS;
+import com.ym.demo.pojo.TestPojo1;
 import com.ym.demo.pojo.User;
 import com.ym.demo.utils.Judge;
 import com.ym.demo.utils.TDOA;
 import com.ym.demo.utils.idCardCheck.IdCardVerification;
 import org.junit.Test;
 
+import java.math.BigDecimal;
 import java.sql.Timestamp;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -407,7 +409,8 @@ public class TheMainClass {
         //测试原始接口
         String fri = IConstants.FRI;
         System.out.println(fri);
-        System.out.println(EnumTest.FRI);
+        System.out.println(EnumTest.MON);
+        System.out.println(EnumTest.MON.getName());
     }
 
     @Test//2019-2-12,今天太困,所以这个test类主要用于玩耍来抵消困意
@@ -488,23 +491,64 @@ public class TheMainClass {
 //        Integer a = 1;
 //        Short b = 1;
 //        System.out.println(b==(short)1);
-    double a =1.23;
-    int b =3;
+        double a = 1.23;
+        int b = 3;
         double v = a * b;
         System.out.println(v);
 
-        int c =3612;
+        int c = 3612;
         double v1 = c * 0.001;
         System.out.println(v1);
     }
 
     @Test //枚举测试
     public void funEnum() {
-        System.out.println(EnumTest.FRI.toString());
+        int a = 111;
+        BigDecimal bigDecimal = BigDecimal.valueOf(111);
+        System.out.println(bigDecimal);
+        System.out.println(EnumTest.MON.toString());
     }
 
-}
+    @Test //doWhile测试
+    public void doWhileTest() {
 
+        List<Integer> integerList = new ArrayList<>();
+        int i = 0;
+        do {
+
+            integerList.add(i);
+            i++;
+
+        } while (integerList.size() < 10);
+        System.out.println(integerList);
+        List<Integer> integerList1 = integerList.subList(1, integerList.size());
+        System.out.println(integerList1);
+    }
+
+    @Test //i++ i -- 测试
+    public void iTest() {
+
+        int i = -1;
+        for (int i1 = 0; i1 < 10; i1++) {
+            System.out.println(50-i);
+            i--;
+        }
+    }
+
+    @Test //  测试绝对值
+    public void absest() {
+
+        int i = -1;
+        double i1 = -1.16546541;
+        System.out.println(Math.abs(i));
+        System.out.println(Math.abs(i1));
+
+        TestPojo1 testPojo1 = new TestPojo1();
+        testPojo1.setAddress("asd");
+        System.out.println(testPojo1);
+
+    }
+}
 
 
 // if (Judge.isChinese(e.getMessage().charAt(0))) {

@@ -27,7 +27,7 @@ public class ArrayMain {
         }
         /**
          * 获取当前类名
-         * 适用于非静态方法：this.getClass().getName()
+         * 适用于非静态方法：this.getClass().getUserName()
          * 适用于静态方法：Thread.currentThread().getStackTrace()[1].getClassName()
          */
     }
@@ -434,12 +434,12 @@ public class ArrayMain {
 //        User user = new User("王五","123");
 //        User u = new User();
 //        u = user; //这仅仅是把一个引用 指向另一个引用,  用的 都还是同一个地址, 该行代码无任何意义.
-//        user.setName("wangwu");
+//        user.setUserName("wangwu");
 //        System.out.println(u);//User{name='wangwu', pwd='123'}
 
 //        User user = new User("王五", "123");
 //        User u = new User(user); //浅拷贝核心代码 --方法1
-//        user.setName("wangwu");
+//        user.setUserName("wangwu");
 //        System.out.println(u); //User{name='王五', pwd='123'}
 
         User user = new User("王五", "123");
@@ -447,6 +447,29 @@ public class ArrayMain {
         user.setName("wangwu11");
         System.out.println(u); //User{name='王五', pwd='123'}
 
+
+    }
+
+    @Test //集合和数组的嵌套测试
+    public void fun10() {
+
+        List<List<Double[]>> doubles = new ArrayList<>();
+
+        for (int i = 0; i < 10; i++) {
+            List<Double[]> doubles1 = new ArrayList<>();
+            Double[] a = new Double[2];
+            a[0] = 22.10 + (i * 0.1);
+            a[1] = 113.10 + (i * 0.1);
+            doubles1.add(a);
+            doubles.add(doubles1);
+        }
+        System.out.println(doubles.toString());
+        System.out.println(Arrays.toString(doubles.toArray()));
+        for (List<Double[]> aDouble : doubles) {
+            for (Double[] doubles1 : aDouble) {
+                System.out.println(Arrays.toString(doubles1));
+            }
+        }
 
     }
 

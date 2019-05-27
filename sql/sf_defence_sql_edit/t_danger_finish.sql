@@ -20,7 +20,7 @@ Date: 2018-10-25 09:54:22
 -- ----------------------------
 DROP TABLE IF EXISTS "sf_defence"."t_danger";
 CREATE TABLE "sf_defence"."t_danger" (
-"recid" int4 NOT NULL,
+"id" int4 NOT NULL,
 "type" varchar(50) COLlatE "default",
 "category_name" varchar(255) COLlatE "default",
 "specific_name" varchar(255) COLlatE "default",
@@ -42,7 +42,7 @@ WITH (OIDS=FALSE)
 
 ;
 COMMENT ON TABLE "sf_defence"."t_danger" IS '危化场所(t_danger)';
-COMMENT ON COLUMN "sf_defence"."t_danger"."recid" IS 'id';
+COMMENT ON COLUMN "sf_defence"."t_danger"."id" IS 'id';
 COMMENT ON COLUMN "sf_defence"."t_danger"."type" IS '类别';
 COMMENT ON COLUMN "sf_defence"."t_danger"."category_name" IS '分类名称';
 COMMENT ON COLUMN "sf_defence"."t_danger"."specific_name" IS '具体名称';
@@ -772,4 +772,4 @@ INSERT INTO "sf_defence"."t_danger" VALUES ('702', '事故灾难类', '4、生�
 -- ----------------------------
 -- Primary Key structure for table t_danger
 -- ----------------------------
-ALTER TABLE "sf_defence"."t_danger" ADD PRIMARY KEY ("recid");
+ALTER TABLE "sf_defence"."t_danger" ADD PRIMARY KEY ("id");

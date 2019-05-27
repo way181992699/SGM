@@ -20,8 +20,8 @@ Date: 2018-10-26 10:08:01
 -- ----------------------------
 DROP TABLE IF EXISTS "sf_defence"."t_gas_station";
 CREATE TABLE "sf_defence"."t_gas_station" (
-"recid" int4,
-"name" varchar(50) COLLATE "default",
+"id" int4,
+"userName" varchar(50) COLLATE "default",
 "address" varchar(100) COLLATE "default",
 "area_code" varchar(50) COLLATE "default",
 "lng" varchar(50) COLLATE "default",
@@ -36,8 +36,8 @@ WITH (OIDS=FALSE)
 
 ;
 COMMENT ON TABLE "sf_defence"."t_gas_station" IS '燃气站(t_gas_station)';
-COMMENT ON COLUMN "sf_defence"."t_gas_station"."recid" IS 'ID';
-COMMENT ON COLUMN "sf_defence"."t_gas_station"."name" IS '名称';
+COMMENT ON COLUMN "sf_defence"."t_gas_station"."id" IS 'ID';
+COMMENT ON COLUMN "sf_defence"."t_gas_station"."userName" IS '名称';
 COMMENT ON COLUMN "sf_defence"."t_gas_station"."address" IS '地址';
 COMMENT ON COLUMN "sf_defence"."t_gas_station"."area_code" IS '区域编码';
 COMMENT ON COLUMN "sf_defence"."t_gas_station"."lng" IS '经度';

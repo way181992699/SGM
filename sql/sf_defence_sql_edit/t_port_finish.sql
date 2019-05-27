@@ -20,8 +20,8 @@ Date: 2018-10-25 09:55:08
 -- ----------------------------
 DROP TABLE IF EXISTS "sf_defence"."t_port";
 CREATE TABLE "sf_defence"."t_port" (
-"recid" int4 NOT NULL,
-"name" varchar(50) COLLATE "default",
+"id" int4 NOT NULL,
+"userName" varchar(50) COLLATE "default",
 "address" varchar(255) COLLATE "default",
 "lng"  numeric(10,5),
 "lat"  numeric(10,5),
@@ -33,8 +33,8 @@ WITH (OIDS=FALSE)
 
 ;
 COMMENT ON TABLE "sf_defence"."t_port" IS '港口(t_port)';
-COMMENT ON COLUMN "sf_defence"."t_port"."recid" IS 'ID';
-COMMENT ON COLUMN "sf_defence"."t_port"."name" IS '名称';
+COMMENT ON COLUMN "sf_defence"."t_port"."id" IS 'ID';
+COMMENT ON COLUMN "sf_defence"."t_port"."userName" IS '名称';
 COMMENT ON COLUMN "sf_defence"."t_port"."address" IS '地址';
 COMMENT ON COLUMN "sf_defence"."t_port"."lng" IS '经度';
 COMMENT ON COLUMN "sf_defence"."t_port"."lat" IS '纬度';
@@ -74,4 +74,4 @@ INSERT INTO "sf_defence"."t_port" VALUES ('21', '大铲湾码头', '西乡大道
 -- ----------------------------
 -- Primary Key structure for table t_port
 -- ----------------------------
-ALTER TABLE "sf_defence"."t_port" ADD PRIMARY KEY ("recid");
+ALTER TABLE "sf_defence"."t_port" ADD PRIMARY KEY ("id");

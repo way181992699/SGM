@@ -5,11 +5,11 @@
 
 <generatorConfiguration>
     <context id="MysqlContext" targetRuntime="MyBatis3Simple" defaultModelType="flat">
-        <property name="beginningDelimiter" value="`"/>
-        <property name="endingDelimiter" value="`"/>
+        <property userName="beginningDelimiter" value="`"/>
+        <property userName="endingDelimiter" value="`"/>
 
         <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
-            <property name="mappers" value="com.ym.demo.utils.MyMapper"/>
+            <property userName="mappers" value="com.ym.demo.utils.MyMapper"/>
         </plugin>
 
         <jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver"

@@ -76,10 +76,10 @@ public class UrlCount implements Comparable<UrlCount> {
     public int compareTo(UrlCount o) {
         if (o.count == count)
             return 0;
-        else if (o.count > count)
-            return -1;
+        else if ((this.count - o.count)>0)
+            return 1; //顺序
         else
-            return 1;
+            return -1; //反序
     }
 
     @Override

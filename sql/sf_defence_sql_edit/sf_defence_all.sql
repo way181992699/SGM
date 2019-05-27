@@ -20,7 +20,7 @@ Date: 2018-10-25 09:54:30
 -- ----------------------------
 DROP TABLE IF EXISTS "sf_defence"."t_forest";
 CREATE TABLE "sf_defence"."t_forest" (
-"recid" int4 NOT NULL,
+"id" int4 NOT NULL,
 "address" varchar(50) COLLATE "default",
 "areacode" varchar(50) COLLATE "default",
 "lng" numeric(10,5),
@@ -43,7 +43,7 @@ WITH (OIDS=FALSE)
 
 ;
 COMMENT ON TABLE "sf_defence"."t_forest" IS '森林防火(t_forest)';
-COMMENT ON COLUMN "sf_defence"."t_forest"."recid" IS 'ID';
+COMMENT ON COLUMN "sf_defence"."t_forest"."id" IS 'ID';
 COMMENT ON COLUMN "sf_defence"."t_forest"."address" IS '地址';
 COMMENT ON COLUMN "sf_defence"."t_forest"."areacode" IS '区域编号';
 COMMENT ON COLUMN "sf_defence"."t_forest"."lng" IS '经度';
@@ -82,7 +82,7 @@ INSERT INTO "sf_defence"."t_forest" VALUES ('9', '龙岗区溜马石工业区林
 -- ----------------------------
 -- Primary Key structure for table t_forest ----finish
 -- ----------------------------
-ALTER TABLE "sf_defence"."t_forest" ADD PRIMARY KEY ("recid");
+ALTER TABLE "sf_defence"."t_forest" ADD PRIMARY KEY ("id");
 
 
 
@@ -111,8 +111,8 @@ Date: 2018-10-25 09:54:38
 -- "lat" numeric(10,5),
 DROP TABLE IF EXISTS "sf_defence"."t_gas_station";
 CREATE TABLE "sf_defence"."t_gas_station" (
-"recid" int4,
-"name" varchar(50) COLLATE "default",
+"id" int4,
+"userName" varchar(50) COLLATE "default",
 "address" varchar(100) COLLATE "default",
 "area_code" varchar(50) COLLATE "default",
 "lng" numeric(10,5),
@@ -127,8 +127,8 @@ WITH (OIDS=FALSE)
 
 ;
 COMMENT ON TABLE "sf_defence"."t_gas_station" IS '燃气站(t_gas_station)';
-COMMENT ON COLUMN "sf_defence"."t_gas_station"."recid" IS 'ID';
-COMMENT ON COLUMN "sf_defence"."t_gas_station"."name" IS '名称';
+COMMENT ON COLUMN "sf_defence"."t_gas_station"."id" IS 'ID';
+COMMENT ON COLUMN "sf_defence"."t_gas_station"."userName" IS '名称';
 COMMENT ON COLUMN "sf_defence"."t_gas_station"."address" IS '地址';
 COMMENT ON COLUMN "sf_defence"."t_gas_station"."area_code" IS '区域编码';
 COMMENT ON COLUMN "sf_defence"."t_gas_station"."lng" IS '经度';
@@ -442,7 +442,7 @@ INSERT INTO "sf_defence"."t_gas_station" VALUES ('148', '深圳市兴喜化工�
 -- ----------------------------
 -- Alter Sequences Owned By --finish!!!!!!!!
 -- ----------------------------
-ALTER TABLE "sf_defence"."t_gas_station" ADD PRIMARY KEY ("recid");
+ALTER TABLE "sf_defence"."t_gas_station" ADD PRIMARY KEY ("id");
 
 
 
@@ -470,8 +470,8 @@ Date: 2018-10-25 09:54:45
 -- ----------------------------
 DROP TABLE IF EXISTS "sf_defence"."t_geo_hazard";
 CREATE TABLE "sf_defence"."t_geo_hazard" (
-"recid" int4,
-"name" varchar(50) COLLATE "default",
+"id" int4,
+"userName" varchar(50) COLLATE "default",
 "street" varchar(50) COLLATE "default",
 "lat" numeric(10,5),
 "lng" numeric(10,5),
@@ -495,8 +495,8 @@ WITH (OIDS=FALSE)
 
 ;
 COMMENT ON TABLE "sf_defence"."t_geo_hazard" IS '地质灾害(t_geo_hazard)';
-COMMENT ON COLUMN "sf_defence"."t_geo_hazard"."recid" IS '记录号ID';
-COMMENT ON COLUMN "sf_defence"."t_geo_hazard"."name" IS '隐患点名称';
+COMMENT ON COLUMN "sf_defence"."t_geo_hazard"."id" IS '记录号ID';
+COMMENT ON COLUMN "sf_defence"."t_geo_hazard"."userName" IS '隐患点名称';
 COMMENT ON COLUMN "sf_defence"."t_geo_hazard"."street" IS '所在街道';
 COMMENT ON COLUMN "sf_defence"."t_geo_hazard"."lat" IS '纬度';
 COMMENT ON COLUMN "sf_defence"."t_geo_hazard"."lng" IS '经度';
@@ -636,7 +636,7 @@ INSERT INTO "sf_defence"."t_geo_hazard" VALUES ('113', '南门头临深圳市天
 -- ----------------------------
 -- Alter Sequences Owned By 
 -- ----------------------------
-ALTER TABLE "sf_defence"."t_geo_hazard" ADD PRIMARY KEY ("recid");
+ALTER TABLE "sf_defence"."t_geo_hazard" ADD PRIMARY KEY ("id");
 ----------finish!!!!!!!!
 
 
@@ -665,7 +665,7 @@ Date: 2018-10-25 09:55:03
 -- "lat" numeric(10,5),
 DROP TABLE IF EXISTS "sf_defence"."t_hospital";
 CREATE TABLE "sf_defence"."t_hospital" (
-"recid" int4 NOT NULL,
+"id" int4 NOT NULL,
 "unitname" varchar(50) COLLATE "default",
 "address" varchar(255) COLLATE "default",
 "areacode" varchar(50) COLLATE "default",
@@ -686,7 +686,7 @@ WITH (OIDS=FALSE)
 
 ;
 COMMENT ON TABLE "sf_defence"."t_hospital" IS '医院数据(t_hospital)';
-COMMENT ON COLUMN "sf_defence"."t_hospital"."recid" IS '记录ID';
+COMMENT ON COLUMN "sf_defence"."t_hospital"."id" IS '记录ID';
 COMMENT ON COLUMN "sf_defence"."t_hospital"."unitname" IS '单位名称';
 COMMENT ON COLUMN "sf_defence"."t_hospital"."address" IS '地址';
 COMMENT ON COLUMN "sf_defence"."t_hospital"."areacode" IS '地区编码';
@@ -784,7 +784,7 @@ INSERT INTO "sf_defence"."t_hospital" VALUES ('70', '坪山新区坑梓人民医
 -- ----------------------------
 -- Primary Key structure for table t_hospital
 -- ----------------------------
-ALTER TABLE "sf_defence"."t_hospital" ADD PRIMARY KEY ("recid");
+ALTER TABLE "sf_defence"."t_hospital" ADD PRIMARY KEY ("id");
 
 
 

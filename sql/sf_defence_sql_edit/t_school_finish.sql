@@ -20,8 +20,8 @@ Date: 2018-10-25 17:21:44
 -- ----------------------------
 DROP TABLE IF EXISTS "sf_defence"."t_school";
 CREATE TABLE "sf_defence"."t_school" (
-"recid" int4 NOT NULL,
-"name" varchar(50) COLLATE "default",
+"id" int4 NOT NULL,
+"userName" varchar(50) COLLATE "default",
 "region_code" varchar(50) COLLATE "default",
 "lng"  numeric(10,5),
 "lat"  numeric(10,5),
@@ -48,8 +48,8 @@ WITH (OIDS=FALSE)
 
 ;
 COMMENT ON TABLE "sf_defence"."t_school" IS '学校(t_school)';
-COMMENT ON COLUMN "sf_defence"."t_school"."recid" IS 'id';
-COMMENT ON COLUMN "sf_defence"."t_school"."name" IS '名称';
+COMMENT ON COLUMN "sf_defence"."t_school"."id" IS 'id';
+COMMENT ON COLUMN "sf_defence"."t_school"."userName" IS '名称';
 COMMENT ON COLUMN "sf_defence"."t_school"."region_code" IS '地区编码';
 COMMENT ON COLUMN "sf_defence"."t_school"."lng" IS '经度';
 COMMENT ON COLUMN "sf_defence"."t_school"."lat" IS '纬度';
@@ -2162,4 +2162,4 @@ INSERT INTO "sf_defence"."t_school" VALUES ('2079', '深圳市宝安成人中等
 -- ----------------------------
 -- Primary Key structure for table t_school
 -- ----------------------------
-ALTER TABLE "sf_defence"."t_school" ADD PRIMARY KEY ("recid");
+ALTER TABLE "sf_defence"."t_school" ADD PRIMARY KEY ("id");

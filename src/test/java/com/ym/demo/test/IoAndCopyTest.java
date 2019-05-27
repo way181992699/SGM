@@ -22,11 +22,7 @@ public class IoAndCopyTest {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
         ObjectOutputStream objectOutputStream = new ObjectOutputStream(out);
         objectOutputStream.writeObject(list);
-//        objectOutputStream.writeChars(str);
         objectOutputStream.flush();
-//        System.out.println(out);
-//        System.out.println(out.toByteArray());
-//        System.out.println(out.toString());
         ObjectInputStream objectInputStream = new ObjectInputStream(new ByteArrayInputStream(out.toByteArray()));
         List<User> o = (List<User>) objectInputStream.readObject();
         list.get(0).setName("李四");
@@ -43,7 +39,7 @@ public class IoAndCopyTest {
             list.add(new User("张三" + i, i * 2 + "", 1 + i));
         }
 
-
+//
         List<UserRes> ts = copyList(list, UserRes.class);
         list.get(0).setName("李四");
         for (UserRes t : ts) {
@@ -125,6 +121,19 @@ public class IoAndCopyTest {
             stringlist.add(s);
         }
         return stringlist;
+    }
+
+
+    @Test//复制父类测试
+    public void copyDifferentAttribute() {
+        Copy1 copy1 = new Copy1();
+        copy1.setAge(18);
+        copy1.setSex("男");
+        copy1.setUserName("张三");
+        Copy2 copy2 = new Copy2();
+BeanUtils.copyProperties(copy1,copy2);
+        System.out.println(copy2);
+
     }
 
 }

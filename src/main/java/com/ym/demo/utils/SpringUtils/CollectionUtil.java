@@ -1,5 +1,9 @@
 package com.ym.demo.utils.SpringUtils;
 
+import org.springframework.util.ResourceUtils;
+
+import java.io.FileNotFoundException;
+
 /**
  * 整理一些Spring框架的工具类
  * 此类为Spring处理集合的工具类
@@ -18,6 +22,9 @@ public class CollectionUtil {
  * 　　CollectionUtils.isNotEmpty({a,b}): true
  */
 
-
+public static void main(String[] args) throws FileNotFoundException {
+    String path = ResourceUtils.getFile("classpath:JsonData.json").getPath();
+    System.out.println(path);
+}
 
 }

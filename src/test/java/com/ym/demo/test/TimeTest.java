@@ -137,4 +137,20 @@ public class TimeTest {
         }
     }
 
+    @Test
+    public void getTimeYear() {
+        SimpleDateFormat format = new SimpleDateFormat("YYYY-MM-dd HH:mm:ss");
+        String year = format.format(1555473900000l);
+        System.out.println(year);
+        long newestTime =1555379659000l;
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTimeInMillis(newestTime);
+        calendar.set(calendar.MINUTE, 6);
+        long timeInMillis = calendar.getTimeInMillis();
+        System.out.println(new Timestamp(newestTime));
+        System.out.println(new Timestamp(timeInMillis));
+
+    }
+
+
 }

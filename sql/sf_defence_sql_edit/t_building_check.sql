@@ -20,8 +20,8 @@ Date: 2018-10-26 11:34:38
 -- ----------------------------
 DROP TABLE IF EXISTS "sf_defence"."t_building";
 CREATE TABLE "sf_defence"."t_building" (
-"recid" int4 NOT NULL,
-"name" varchar(50) COLlatE "default",
+"id" int4 NOT NULL,
+"userName" varchar(50) COLlatE "default",
 "address" varchar(255) COLlatE "default",
 "region_code" varchar(120) COLlatE "default",
 "building_type" varchar(20) COLlatE "default",
@@ -38,8 +38,8 @@ WITH (OIDS=FALSE)
 
 ;
 COMMENT ON TABLE "sf_defence"."t_building" IS '建筑工地(t_building)';
-COMMENT ON COLUMN "sf_defence"."t_building"."recid" IS 'id';
-COMMENT ON COLUMN "sf_defence"."t_building"."name" IS '名称';
+COMMENT ON COLUMN "sf_defence"."t_building"."id" IS 'id';
+COMMENT ON COLUMN "sf_defence"."t_building"."userName" IS '名称';
 COMMENT ON COLUMN "sf_defence"."t_building"."address" IS '地址';
 COMMENT ON COLUMN "sf_defence"."t_building"."region_code" IS '地区编码';
 COMMENT ON COLUMN "sf_defence"."t_building"."building_type" IS '建筑类型';
@@ -501,4 +501,4 @@ INSERT INTO "sf_defence"."t_building" VALUES ('97', '共享大厦基坑支护工
 -- ----------------------------
 -- Alter Sequences Owned By 
 -- ----------------------------
-ALTER TABLE "sf_defence"."t_building" ADD PRIMARY KEY ("recid");
+ALTER TABLE "sf_defence"."t_building" ADD PRIMARY KEY ("id");

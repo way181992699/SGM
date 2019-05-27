@@ -20,7 +20,7 @@ Date: 2018-10-26 10:24:26
 -- ----------------------------
 DROP TABLE IF EXISTS "sf_defence"."t_hospital";
 CREATE TABLE "sf_defence"."t_hospital" (
-"recid" int4 NOT NULL,
+"id" int4 NOT NULL,
 "unitname" varchar(50) COLLATE "default",
 "address" varchar(255) COLLATE "default",
 "areacode" varchar(50) COLLATE "default",
@@ -41,7 +41,7 @@ WITH (OIDS=FALSE)
 
 ;
 COMMENT ON TABLE "sf_defence"."t_hospital" IS '医院数据(t_hospital)';
-COMMENT ON COLUMN "sf_defence"."t_hospital"."recid" IS '记录ID';
+COMMENT ON COLUMN "sf_defence"."t_hospital"."id" IS '记录ID';
 COMMENT ON COLUMN "sf_defence"."t_hospital"."unitname" IS '单位名称';
 COMMENT ON COLUMN "sf_defence"."t_hospital"."address" IS '地址';
 COMMENT ON COLUMN "sf_defence"."t_hospital"."areacode" IS '地区编码';
@@ -139,4 +139,4 @@ INSERT INTO "sf_defence"."t_hospital" VALUES ('70', '坪山新区坑梓人民医
 -- ----------------------------
 -- Primary Key structure for table t_hospital
 -- ----------------------------
-ALTER TABLE "sf_defence"."t_hospital" ADD PRIMARY KEY ("recid");
+ALTER TABLE "sf_defence"."t_hospital" ADD PRIMARY KEY ("id");

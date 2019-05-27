@@ -20,8 +20,8 @@ Date: 2018-11-07 15:54:46
 -- ----------------------------
 DROP TABLE IF EXISTS "sf_defence"."t_metro_station";
 CREATE TABLE "sf_defence"."t_metro_station" (
-"recid" int4 NOT NULL,
-"name" varchar(50) COLLATE "default",
+"id" int4 NOT NULL,
+"userName" varchar(50) COLLATE "default",
 "lng" numeric(12,5),
 "lat" numeric(12,5),
 "line" varchar(10) COLLATE "default",
@@ -239,4 +239,4 @@ INSERT INTO "sf_defence"."t_metro_station" VALUES ('198', '清湖', '114.03658',
 -- ----------------------------
 -- Primary Key structure for table t_metro_station
 -- ----------------------------
-ALTER TABLE "sf_defence"."t_metro_station" ADD PRIMARY KEY ("recid");
+ALTER TABLE "sf_defence"."t_metro_station" ADD PRIMARY KEY ("id");

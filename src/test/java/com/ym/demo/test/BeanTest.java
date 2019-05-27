@@ -1,9 +1,12 @@
 package com.ym.demo.test;
 
-import com.ym.demo.pojo.Person;
-import com.ym.demo.pojo.User;
+import com.ym.demo.pojo.*;
 import org.junit.Test;
 import org.springframework.beans.BeanUtils;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 public class BeanTest extends User {
 
@@ -20,7 +23,7 @@ public class BeanTest extends User {
         User u = new User();
         u.setName("Seven");
         u.setPwd("123456");
-//        System.out.println(u.getName());
+//        System.out.println(u.getUserName());
 //        System.out.println(u.getClass().toString());
         Class<? extends User> aClass = u.getClass();
         System.out.println(aClass.getName());
@@ -84,11 +87,10 @@ public class BeanTest extends User {
     public void BeanEquals() {
         User u = new User();
         User u2 = new User();
-//        u.setName("a");
-//        u2.setName("a");
+//        u.setUserName("a");
+//        u2.setUserName("a");
         System.out.println(u.equals(u2));
         System.out.println(u == u2);
-
 
 
     }
@@ -96,8 +98,8 @@ public class BeanTest extends User {
     @Test //判断两个字符串是否相等
     public void StringEquals() {
         String a = "aaa";
-        String c ="aa";
-        String b = "a"+c;
+        String c = "aa";
+        String b = "a" + c;
         int aa = 1;
         int bb = 1;
         System.out.println(a.equals(b));
@@ -120,8 +122,33 @@ public class BeanTest extends User {
         User u = new User();
         System.out.println(u.getName());
         System.out.println(u.getPwd());
+        AnytingLevel anytingLevel = new AnytingLevel();
+        AnytingLevel anytingLeve2 = new AnytingLevel();
+//        anytingLevel.setR01H(true);
+//        anytingLeve2.setR01H(true);
+        System.out.println(anytingLevel == anytingLeve2);
+        System.out.println(anytingLevel.equals(anytingLeve2));
+        u.setName("asdf");
+        System.out.println(u);
+        u = new User();
+        System.out.println(u);
+    }
 
+    @Test //测试在不继承的情况下, 两个对象能否进行强转
+    public void getConvert() {
+        List list = new ArrayList();
+        for (int i = 0; i < 100; i++) {
+            TestPojo testPojo = new TestPojo(i, "name" + i, "address" + i, "code" + i, "type" + i, 200l + i, "contacts" + i);
+            list.add(testPojo);
+        }
+        Iterator iterator = list.iterator();
+        while (iterator.hasNext()) {
+            TestPojo2 next =(TestPojo2) iterator.next();
+            System.out.println(next);
+        }
 
     }
 
+
+    //
 }

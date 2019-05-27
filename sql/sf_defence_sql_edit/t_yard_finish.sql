@@ -20,7 +20,7 @@ Date: 2018-10-25 09:56:08
 -- ----------------------------
 DROP TABLE IF EXISTS "sf_defence"."t_yard";
 CREATE TABLE "sf_defence"."t_yard" (
-"recid" int4 NOT NULL,
+"id" int4 NOT NULL,
 "address" varchar(255) COLlatE "default",
 "postcode" varchar(10) COLlatE "default",
 "lng"  numeric(10,5),
@@ -38,7 +38,7 @@ WITH (OIDS=FALSE)
 
 ;
 COMMENT ON TABLE "sf_defence"."t_yard" IS '堆场(t_yard)';
-COMMENT ON COLUMN "sf_defence"."t_yard"."recid" IS 'ID';
+COMMENT ON COLUMN "sf_defence"."t_yard"."id" IS 'ID';
 COMMENT ON COLUMN "sf_defence"."t_yard"."address" IS '地址';
 COMMENT ON COLUMN "sf_defence"."t_yard"."postcode" IS '邮编';
 COMMENT ON COLUMN "sf_defence"."t_yard"."lng" IS '经度';
@@ -69,4 +69,4 @@ INSERT INTO "sf_defence"."t_yard" VALUES ('6', '龙岗区坪地街道红花岭�
 -- ----------------------------
 -- Primary Key structure for table t_yard
 -- ----------------------------
-ALTER TABLE "sf_defence"."t_yard" ADD PRIMARY KEY ("recid");
+ALTER TABLE "sf_defence"."t_yard" ADD PRIMARY KEY ("id");
