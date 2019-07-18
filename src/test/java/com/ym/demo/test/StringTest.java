@@ -135,11 +135,29 @@ public class StringTest {
     @Test//替换测试
     public void replaceTest() {
         String str = "石岩街道";
+        String str1 = "石岩特别合作区";
         String s = str.replace("街道", "");
+        String s1 = str1.replace("街道", "");
         System.out.println(s);
+        System.out.println(s1);
     }
 
 
+    @Test//
+    public void judgeMap() {
+
+        String sql = "select max(ddatetime) as ddatetime  from radial  where ddatetime> to_date('2019-07-18 15:53:00','yyyy-mm-dd hh24:mi:ss')";
+        String sql1 = "select max(ddatetime) as ddatetime  from radial  where ddatetime>" + " to_date('2019-07-18 15:53:00','yyyy-mm-dd hh24:mi:ss')";
+        String a = "b";
+        String c = "b";
+        System.out.println(a.getClass());
+        System.out.println(c.getClass());
+        System.out.println(a == c);
+        System.out.println(sql1.equals(sql));
+        System.out.println(sql1==sql);
+        System.out.println(sql);
+        System.out.println(sql1);
+    }
 
 
 }

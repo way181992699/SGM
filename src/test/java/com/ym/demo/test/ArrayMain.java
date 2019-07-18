@@ -470,7 +470,30 @@ public class ArrayMain {
                 System.out.println(Arrays.toString(doubles1));
             }
         }
+    }
 
+    @Test //测试Set数组的添加重复数据的情况
+    public void fun11() {
+        Set<Integer> set = new HashSet<>();
+        set.add(1);
+        set.add(2);
+        set.add(2);
+        set.add(3);
+        set.add(3);
+        set.add(3);
+        System.out.println(set);
+    }
+
+
+
+    @Test //测试Set数组的添加重复数据的情况
+    public void testArrayString() {
+        String[] arrayString = getArrayString("a", "sd", "sdf", "aaaaa");
+        System.out.println(Arrays.toString(arrayString));
+    }
+
+    public String[] getArrayString(String ... agrs){
+        return agrs;
     }
 
 }

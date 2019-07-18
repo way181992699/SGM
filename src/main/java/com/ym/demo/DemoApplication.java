@@ -25,6 +25,7 @@ import java.security.cert.X509Certificate;
 public class DemoApplication {
 
 
+
     @Bean
     public RestTemplate restTemplate() throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
         TrustStrategy acceptingTrustStrategy = (X509Certificate[] chain, String authType) -> true;

@@ -83,7 +83,6 @@ public class TheMainClass {
         long currentTime = calendar.getTimeInMillis();
         System.out.println("获取当前年份: " + calendar.get(calendar.YEAR));
         System.out.println("当前时间戳: " + new Timestamp(currentTime) + ", " + currentTime);
-
         calendar.add(calendar.YEAR, -1);
         long yesteryear = calendar.getTimeInMillis();
         System.out.println("获取当前年份: " + calendar.get(calendar.YEAR));
@@ -101,7 +100,6 @@ public class TheMainClass {
         System.out.println(Arrays.toString(split));
         System.out.println(Arrays.toString(strings));
         System.out.println(strings.length);
-
     }
 
     @Test
@@ -544,7 +542,6 @@ public class TheMainClass {
         System.out.println(Math.abs(i1));
 
         TestPojo1 testPojo1 = new TestPojo1();
-        testPojo1.setAddress("asd");
         System.out.println(testPojo1);
 
     }

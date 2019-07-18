@@ -21,4 +21,11 @@ public class TestBean {
     public static void setNum(Integer num) {
         TestBean.num = num;
     }
+
+    @Override
+    public String toString() {
+        return "TestBean{" +
+                "val=" + val +
+                '}';
+    }
 }

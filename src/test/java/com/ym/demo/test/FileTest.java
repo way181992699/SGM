@@ -10,6 +10,7 @@ import org.junit.Test;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class FileTest {
@@ -34,6 +35,10 @@ public class FileTest {
     @Test//测试读取json文件
     public void fun1() throws IOException {
         String path = "D:/TestJson.json";
+        String data = "D:/Data";
+        File file = new File(data);
+        String[] list = file.list();
+        System.out.println(Arrays.asList(list));
         String str = FileUtils.getContentsAsString(new File(path));
 
         //json反序列化为java类(报错,未完成.)
