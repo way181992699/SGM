@@ -1,8 +1,8 @@
 package com.ym.demo.utils;
 
 
+import com.ym.demo.pojo.Hello;
 import com.ym.demo.pojo.TestBean;
-import com.ym.response.Result;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -56,23 +56,35 @@ public class TestAop {
      */
     @Around("execution(* com.ym.demo.controller.AopController.*(..))")
     public Object around(ProceedingJoinPoint joinPoint) throws Throwable {
-        StringBuffer requestURL = httpServletRequest.getRequestURL();
-        String contextPath = httpServletRequest.getContextPath();
-        String id = httpServletRequest.getHeader("id");
-        String method = httpServletRequest.getMethod();
-        System.out.println(method);
-        System.out.println(contextPath);
-        System.out.println(requestURL.toString());
-        System.out.println("环绕通知前....num的值为:" + testBean.getVal());
-        Object obj = (Object) joinPoint.proceed();
-        Result r = (Result) obj;
-        if (!r.isSuccess()){
-            if (!ExistUtils.StrIsEmpty(r.getReason())) {
-                return Result.failed("报错啦");
+        Object[] args = joinPoint.getArgs();
+        if (args.length > 0) {
+            for (Object arg : args) {
+                Hello arg1 = (Hello) arg;
+                System.out.println(arg1.getSay());
+                System.out.println(arg.toString());
             }
         }
-        System.out.println("环绕通知后....num的值为:" + testBean.getVal());
+        Object obj = (Object) joinPoint.proceed();
         return obj;
+
+
+//        StringBuffer requestURL = httpServletRequest.getRequestURL();
+//        String contextPath = httpServletRequest.getContextPath();
+//        String id = httpServletRequest.getHeader("id");
+//        String method = httpServletRequest.getMethod();
+//        System.out.println(method);
+//        System.out.println(contextPath);
+//        System.out.println(requestURL.toString());
+//        System.out.println("环绕通知前....num的值为:" + testBean.getVal());
+//        Object obj = (Object) joinPoint.proceed();
+//        Result r = (Result) obj;
+//        if (!r.isSuccess()) {
+//            if (!ExistUtils.StrIsEmpty(r.getReason())) {
+//                return Result.failed("报错啦");
+//            }
+//        }
+//        System.out.println("环绕通知后....num的值为:" + testBean.getVal());
+//        return obj;
 
     }
 

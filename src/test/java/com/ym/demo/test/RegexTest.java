@@ -48,9 +48,12 @@ public class RegexTest {
 
     public void regexMatches01(String a, String b) {
         String str = "select max(ddatetime) as ddatetime  from radial  where ddatetime>{ddatetime} and reicd<{recid}";
-        String regex = "\\{([^}])*\\}";
+//        String regex = "\\{([^}])*\\}";
+        String regex = "\\{[^}]+\\}";
+        System.out.println(regex);
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(str);
+
         while (matcher.find()) {
             String group = matcher.group();
             System.out.println(group);

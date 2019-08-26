@@ -4,6 +4,9 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mchange.io.FileUtils;
+import com.opencsv.CSVReader;
+import com.opencsv.CSVReaderBuilder;
+import com.ym.demo.pojo.GetRiskPoint;
 import com.ym.demo.pojo.Student;
 import com.ym.demo.utils.CreateFileUtil;
 import org.junit.Test;
@@ -11,6 +14,7 @@ import org.junit.Test;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 
 public class FileTest {
@@ -115,6 +119,45 @@ public class FileTest {
         }
         System.out.println("截取完成！");
     }
+
+    @Test
+    public void readCSV() {
+        String srcPath = "C:/Users/admin/Documents/Thunder_201908082200.csv";
+        String charset = "utf-8";
+        try (CSVReader csvReader = new CSVReaderBuilder(new BufferedReader(new InputStreamReader(new FileInputStream(new File(srcPath)), charset))).build()) {
+            Iterator<String[]> iterator = csvReader.iterator();
+            List<GetRiskPoint> getRiskPoints = new ArrayList<>();
+            while (iterator.hasNext()) {
+                GetRiskPoint getRiskPoint = new GetRiskPoint();
+                String[] next = iterator.next();
+                getRiskPoint.setLng(Double.valueOf(next[0]));
+                getRiskPoint.setLat(Double.valueOf(next[1]));
+                getRiskPoint.setLevel(getThunderLevel(Double.valueOf(next[2])));
+//                Arrays.stream(iterator.next()).forEach(e-> System.out.print(e+","));
+                getRiskPoints.add(getRiskPoint);
+            }
+            System.out.println(getRiskPoints);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public Integer getThunderLevel(double val){
+        if(val>0&&val<=30){
+            return 0;
+        }
+        if(val>30&&val<=35){
+            return 1;
+        }
+        if(val>35&&val<=40){
+            return 2;
+        }
+        if(val>40){
+            return 3;
+        }
+        return null;
+    }
+
 
 
 }

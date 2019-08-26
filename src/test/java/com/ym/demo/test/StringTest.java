@@ -2,6 +2,7 @@ package com.ym.demo.test;
 
 import com.ym.demo.pojo.User;
 import org.junit.Test;
+import org.springframework.util.StringUtils;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -9,6 +10,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class StringTest {
+    private static final String LOGIN_URL = "/Airport/Login/GetToken";
     @Test //测试字符串包含(区分大小写)
     public void StringContain() {
         String str = "5949";
@@ -41,6 +43,11 @@ public class StringTest {
         String str1 = "already exists";
         String code1 = "ABC";
         String empty = " ";
+        String url = "http://10.153.96.74/Airport/Login/GetLogin";
+        if ( url.contains(LOGIN_URL)) { //登录接口不拦截
+            System.out.println("拦截放过");
+
+        }
 //        System.out.println(str.contains(code));
 //        System.out.println(str.contains(str1));
         User user = new User();

@@ -23,8 +23,7 @@ sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
-    maven { url "http://10.153.114.154:8081/repository/maven-public/" }
-    maven { url "http://10.153.114.154:8081/repository/maven-spring/" }
+    maven { url "http://10.153.105.28:8081/repository/maven-public/" }
 }
 
 configurations {
@@ -70,12 +69,15 @@ dependencies {
     // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-redis redis数据库
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-redis', version: '2.0.4.RELEASE'
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-redis', version: '2.0.4.RELEASE'
-    compile('com.ym:base:1.0.1')
+    compile('com.ym:base:1.0.17')
     // https://mvnrepository.com/artifact/org.projectlombok/lombok
     compile group: 'org.projectlombok', name: 'lombok', version: '1.18.2'
 
     // https://mvnrepository.com/artifact/mysql/mysql-connector-java
     compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.6'
+    testCompile group: 'com.microsoft.sqlserver', name: 'mssql-jdbc', version: '7.0.0.jre8'
+// https://mvnrepository.com/artifact/com.opencsv/opencsv
+    compile group: 'com.opencsv', name: 'opencsv', version: '4.1'
 
 
 }
