@@ -9,15 +9,15 @@ import com.opencsv.CSVReaderBuilder;
 import com.ym.demo.pojo.GetRiskPoint;
 import com.ym.demo.pojo.Student;
 import com.ym.demo.utils.CreateFileUtil;
+import jcifs.smb.SmbFile;
 import org.junit.Test;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.List;
+import java.net.URISyntaxException;
+import java.util.*;
 
 public class FileTest {
+
 
     @Test//测试导出Json文件
     public void fun() throws JsonProcessingException {
@@ -105,14 +105,12 @@ public class FileTest {
 
             }
         } catch (Exception e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         } finally {
             try {
                 bu.close();
                 ty.close();
             } catch (IOException e) {
-                // TODO Auto-generated catch block
                 e.printStackTrace();
             }
 
@@ -142,22 +140,136 @@ public class FileTest {
         }
     }
 
-    public Integer getThunderLevel(double val){
-        if(val>0&&val<=30){
+    public Integer getThunderLevel(double val) {
+        if (val > 0 && val <= 30) {
             return 0;
         }
-        if(val>30&&val<=35){
+        if (val > 30 && val <= 35) {
             return 1;
         }
-        if(val>35&&val<=40){
+        if (val > 35 && val <= 40) {
             return 2;
         }
-        if(val>40){
+        if (val > 40) {
             return 3;
         }
         return null;
     }
 
+    //尝试读取文件
+    public static void readFileName(String fileName) throws FileNotFoundException, IOException {
+        try {
 
+            File file = new File(fileName);
+            if (!file.isDirectory()) {
+                System.out.println("文件");
+                System.out.println("path=" + file.getPath());
+                System.out.println("absolutepath=" + file.getAbsolutePath());
+                System.out.println("name=" + file.getName());
+            } else if (file.isDirectory()) {
+//                System.out.println("文件夹");
+                String[] filelist = file.list();
+                for (int i = 0; i < filelist.length; i++) {
+                    File readfile = new File(fileName + "\\" + filelist[i]);
+                    if (!readfile.isDirectory()) {
+//                        System.out.println("path=" + readfile.getPath());
+//                        System.out.println("absolutepath="+ readfile.getAbsolutePath());//绝对地址
+//                        System.out.println("name=" + readfile.getName());//文件名
+                        System.out.println(readfile.getName());
+                    } else if (readfile.isDirectory()) {
+                        readFileName(fileName + "\\" + filelist[i]);
+                    }
+                }
+            }
+        } catch (FileNotFoundException e) {
+            System.out.println("readfile()   Exception:" + e.getMessage());
+        }
+    }
+
+    //尝试smb读取文件
+    public static void readSmbFileName(String fileName) throws FileNotFoundException, IOException {
+        try {
+
+            SmbFile file = new SmbFile(fileName);
+            if (!file.isDirectory()) {
+                System.out.println("文件");
+                System.out.println("path=" + file.getPath());
+                System.out.println("Canonical=" + file.getCanonicalPath());
+                System.out.println("Dfs=" + file.getDfsPath());
+                System.out.println("name=" + file.getName());
+            } else if (file.isDirectory()) {
+//                System.out.println("文件夹");
+                String[] filelist = file.list();
+                for (int i = 0; i < filelist.length; i++) {
+                    File readfile = new File(fileName + "\\" + filelist[i]);
+                    if (!readfile.isDirectory()) {
+                        System.out.println("path=" + readfile.getPath());
+                        System.out.println("Canonical=" + file.getCanonicalPath());
+                        System.out.println("Dfs=" + file.getDfsPath());
+                        System.out.println("name=" + readfile.getName());//文件名
+                        System.out.println(readfile.getName());
+                    } else if (readfile.isDirectory()) {
+                        readSmbFileName(fileName + "\\" + filelist[i]);
+                    }
+                }
+            }
+        } catch (FileNotFoundException e) {
+            System.out.println("readfile()   Exception:" + e.getMessage());
+        }
+    }
+
+    @Test
+    public void Test() throws IOException, URISyntaxException {
+        String origin = "E:/wkx/深圳项目/智能预报/文档/预警信号发布细则(2019)";
+        String origin1 = "\\\\10.153.96.74\\e$\\Resources\\SMB\\WeatherBulletin\\pdf\\2019";//\\IP\E$连接方式
+        String origin2 = "smb://administrator:www.yamatech.cn123@10.153.96.74/Resources/SMB/WeatherBulletin/pdf/2019/";//\\IP\E$连接方式
+        SmbFile remoteFile = new SmbFile(origin2);
+
+        try {
+//            readFileName(origin1);
+            readSmbFileName(origin2);
+//            System.out.println(smbFileToImageList(remoteFile));
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public List<String> smbFileToImageList(SmbFile file) throws Exception {
+        List<String> strings = new ArrayList<>();
+        if (file.isDirectory()) {
+            // 获得该文件夹内的所有文件
+            String[] files = file.list();
+            if (files != null) {
+                Collections.addAll(strings, files);
+            }
+        }
+        return strings;
+    }
+
+    @Test
+    public void fileTest() {
+        String originB = "E:/wkx/深圳项目/智能预报/文档/UI设计界面/B/1首页(副本).png";
+        String originA = "E:/wkx/深圳项目/智能预报/文档/UI设计界面/A/1首页.png";
+        File fileB = new File(originB);
+        File fileA = new File(originA);
+        FileOutputStream fileOutputStream = null;
+        FileInputStream fileInputStream = null;
+        try {
+            fileInputStream = new FileInputStream(fileA);
+            byte[] bytes = new byte[fileInputStream.available()];
+            fileInputStream.read(bytes);
+            fileOutputStream = new FileOutputStream(fileB);
+            fileOutputStream.write(bytes);
+            fileInputStream.close();
+            fileOutputStream.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
 }

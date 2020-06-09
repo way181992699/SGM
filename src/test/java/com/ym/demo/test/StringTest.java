@@ -2,18 +2,24 @@ package com.ym.demo.test;
 
 import com.ym.demo.pojo.User;
 import org.junit.Test;
+import org.springframework.util.CollectionUtils;
 import org.springframework.util.StringUtils;
 
+import java.sql.Timestamp;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class StringTest {
     private static final String LOGIN_URL = "/Airport/Login/GetToken";
+
     @Test //测试字符串包含(区分大小写)
     public void StringContain() {
         String str = "5949";
+        String str12 = "0001";
+        String str22 = "000";
         String code = "5949303";
         String str1 = "A";
         String code1 = "ABC";
@@ -21,6 +27,8 @@ public class StringTest {
 //        System.out.println(code1.contains(str1));
         System.out.println(code.substring(0, 3));
         System.out.println(code.substring(4, 7));
+        System.out.println(Integer.valueOf(str12));
+        System.out.println(Integer.valueOf(str22));
     }
 
     @Test //测试字符串包含(区分大小写)
@@ -44,7 +52,7 @@ public class StringTest {
         String code1 = "ABC";
         String empty = " ";
         String url = "http://10.153.96.74/Airport/Login/GetLogin";
-        if ( url.contains(LOGIN_URL)) { //登录接口不拦截
+        if (url.contains(LOGIN_URL)) { //登录接口不拦截
             System.out.println("拦截放过");
 
         }
@@ -84,8 +92,26 @@ public class StringTest {
     @Test //测试字符串转int
     public void StringOfValue() {
         String str = "123";
+        String str1 = "01";
         Integer integer = Integer.valueOf(str);
-        System.out.println(integer + 5);
+        Integer integer1 = Integer.valueOf(str1);
+//        System.out.println(integer1);
+//        System.out.println(integer + 5);
+        String a = "123,,23,34,,,6";
+        String[] split = a.split(",");
+        Set<String> set = new HashSet<>();
+        for (String s : split) {
+            System.out.println(s);
+            if (!StringUtils.isEmpty(s)) {
+                set.add(s);
+            }
+        }
+        System.out.println("-------------------------");
+        for (String s : set) {
+            System.out.println(s);
+
+        }
+
     }
 
     //
@@ -161,9 +187,69 @@ public class StringTest {
         System.out.println(c.getClass());
         System.out.println(a == c);
         System.out.println(sql1.equals(sql));
-        System.out.println(sql1==sql);
+        System.out.println(sql1 == sql);
         System.out.println(sql);
         System.out.println(sql1);
+    }
+
+
+    @Test//截取字符串
+    public void sbuString() {
+
+        String sql = "大风黄色预警提示";
+        String sql1 = "山体滑坡橙色预警提示";
+
+        System.out.println(sql.substring(0, sql.indexOf("色") + 1));
+        System.out.println(sql1.substring(0, sql1.indexOf("色") + 1));
+        System.out.println(sql1.substring(0, 2));
+        System.out.println(sql1.substring(2));
+        List<String> a = new ArrayList<>();
+        a.add(null);
+        System.out.println(CollectionUtils.isEmpty(a));
+
+    }
+
+
+    @Test//截取字符串
+    public void sbuString1() throws ParseException {
+        String sql = "2020年05月08日 14时05分38秒";
+        Date d = new SimpleDateFormat("yyyy年MM月dd日 HH时mm分ss秒").parse(sql);
+        System.out.println(d);
+        System.out.println(d.getTime());
+    }
+
+    @Test
+    public void sbuString2() throws ParseException {
+        //需要变动的day天数,比如2天
+        int day = 2;
+        //打印今天+day的时间
+        System.out.println(new Timestamp(addDay(day).getTime()));
+        //打印今天-day的时间
+        System.out.println(new Timestamp(deleteDay(day).getTime()));
+        System.out.println();
+    }
+
+    public Date addDay(int day) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.add(calendar.DAY_OF_YEAR, day);
+        return calendar.getTime();
+    }
+
+    public Date deleteDay(int day) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.add(calendar.DAY_OF_YEAR, -day);
+        return calendar.getTime();
+    }
+
+    @Test
+    public void longAndDou()  {
+        Double a =  0.5;
+
+        long l = a.longValue();
+        System.out.println(l);
+        long deferHour =(long)(a * 1000 * 60 * 60) ;
+
+        System.out.println(deferHour);
     }
 
 

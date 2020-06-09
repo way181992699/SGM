@@ -1,0 +1,36 @@
+set file="E:\wkx\GitBackup\nc-20200116\"
+
+git clone http://wkx@10.117.6.226:8089/r/eureka-config.git %file% \eureka-config
+git clone http://wkx@10.117.6.226:8089/r/eureka-server.git %file% \eureka-server
+git clone http://wkx@10.117.6.226:8089/r/SfConfig.git %file% \SfConfig.git
+
+xlb
+git clone http://wkx@10.117.6.226:8089/r/xlb/base-xlb-info.git %file% \base-xlb-info
+git clone http://wkx@10.117.6.226:8089/r/xlb/base-xlb-user.git %file% \base-xlb-user
+git clone http://wkx@10.117.6.226:8089/r/xlb/gate-auth.git %file% \gate-auth
+git clone http://wkx@10.117.6.226:8089/r/xlb/work-auth.git %file% \work-auth
+
+xth
+git clone http://wkx@10.117.6.226:8089/r/xth/base-api-timelimit.git %file% \base-api-timelimit
+git clone http://wkx@10.117.6.226:8089/r/xth/base-assets.git %file% \base-assets
+git clone http://wkx@10.117.6.226:8089/r/xth/base-aws.git %file% \base-aws
+git clone http://wkx@10.117.6.226:8089/r/xth/base-customerapi.git %file% \base-customerapi
+git clone http://wkx@10.117.6.226:8089/r/xth/base-forecast.git %file% \base-forecast
+git clone http://wkx@10.117.6.226:8089/r/xth/base-grant.git %file% \base-grant
+git clone http://wkx@10.117.6.226:8089/r/xth/base-grid.git %file% \base-grid
+git clone http://wkx@10.117.6.226:8089/r/xth/base-log.git %file% \base-log
+git clone http://wkx@10.117.6.226:8089/r/xth/base-message.git %file% \base-message
+git clone http://wkx@10.117.6.226:8089/r/xth/base-product.git %file% \base-product
+git clone http://wkx@10.117.6.226:8089/r/xth/base-stat.git %file% \base-stat
+git clone http://wkx@10.117.6.226:8089/r/xth/base-statistics.git %file% \base-statistics
+git clone http://wkx@10.117.6.226:8089/r/xth/base-user.git %file% \base-user
+git clone http://wkx@10.117.6.226:8089/r/xth/base-warning.git %file% \base-warning
+git clone http://wkx@10.117.6.226:8089/r/xth/gate-admin.git %file% \gate-admin
+git clone http://wkx@10.117.6.226:8089/r/xth/gate-channel.git %file% \gate-channel
+git clone http://wkx@10.117.6.226:8089/r/xth/gate-inner.git %file% \gate-inner
+git clone http://wkx@10.117.6.226:8089/r/xth/gate-outer.git %file% \gate-outer
+git clone http://wkx@10.117.6.226:8089/r/xth/spider-grant.git %file% \spider-grant
+git clone http://wkx@10.117.6.226:8089/r/xth/spider-send-sms.git %file% \spider-send-sms
+git clone http://wkx@10.117.6.226:8089/r/xth/work-api-admin.git %file% \work-api-admin
+git clone http://wkx@10.117.6.226:8089/r/xth/work-channel.git %file% work-channel
+git clone http://wkx@10.117.6.226:8089/r/xth/work-xlb.git %file% \work-xlb

@@ -189,7 +189,7 @@ public class TimeTest {
     @Test
     public void fun4() {
         Calendar calendar = Calendar.getInstance();
-        calendar.setTime(new Date());
+        calendar.setTime(new Date(1569990000000L));
         long currentTime = calendar.getTimeInMillis();
         int year = calendar.get(calendar.YEAR);
         int month = calendar.get(calendar.MONTH);
@@ -201,6 +201,7 @@ public class TimeTest {
 
         calendar.add(calendar.MONTH, -month);
         calendar.add(calendar.DATE, -(date - 1));
+        System.out.println("获取当前多少号: " + calendar.get(calendar.DATE));
         long yesteryear = calendar.getTimeInMillis();
         long zero = yesteryear / (1000 * 3600 * 24) * (1000 * 3600 * 24) - TimeZone.getDefault().getRawOffset();//今天零点零分零秒的毫秒数
         System.out.println("获取当前年份: " + calendar.get(calendar.YEAR));
@@ -209,6 +210,12 @@ public class TimeTest {
         Date a = new Date();
         System.out.println(a);
         System.out.println(new Timestamp(a.getTime()));
+    }
+
+    @Test
+    public void funZero() {
+        long l = System.currentTimeMillis()/(1000 * 3600 * 24) * (1000 * 3600 * 24) - TimeZone.getDefault().getRawOffset();
+        System.out.println(new Timestamp(l));
     }
 
     @Test//玩calendar类
