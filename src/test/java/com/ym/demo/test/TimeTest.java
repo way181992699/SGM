@@ -226,9 +226,19 @@ public class TimeTest {
         calendar.set(calendar.MINUTE, 0);//设置当天的分钟数为0(0分)
         calendar.set(calendar.SECOND, 0);//设置当天的秒数为0(0秒)
         calendar.set(calendar.MILLISECOND, 0);//设置当天的毫秒数为0(0毫秒)
-        System.out.println(new Timestamp(calendar.getTimeInMillis()));
+//        System.out.println(new Timestamp(calendar.getTimeInMillis()));
         calendar.add(calendar.HOUR_OF_DAY, 31);
-        System.out.println(new Timestamp(calendar.getTimeInMillis()));
+//        System.out.println(new Timestamp(calendar.getTimeInMillis()));
+
+        Calendar instance = Calendar.getInstance();
+        instance.setTimeInMillis(1598868000000L);
+        System.out.println(new Timestamp(instance.getTimeInMillis()));
+        int i = instance.get(Calendar.HOUR_OF_DAY);
+        instance.add(Calendar.DAY_OF_YEAR,1);
+        instance.set(Calendar.HOUR_OF_DAY,9);
+        System.out.println(new Timestamp(instance.getTimeInMillis()));
+        int i1 = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
+        System.out.println(i+1);
     }
 
     /**

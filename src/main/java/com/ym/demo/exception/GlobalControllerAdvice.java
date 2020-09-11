@@ -1,6 +1,7 @@
 package com.ym.demo.exception;
 
-import com.ym.response.Result;
+import com.ym.demo.utils.Result;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.ExceptionHandler;

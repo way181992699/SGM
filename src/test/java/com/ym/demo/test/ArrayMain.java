@@ -289,9 +289,13 @@ public class ArrayMain {
         list1.add("2222");
         list1.add("3333");
         List list2 = new ArrayList();
+        list2.add("1111");
+        list2.add("2222");
         list2.add("3333");
         list2.add("4444");
         list2.add("5555");
+        ArrayList list3  = (ArrayList) ((ArrayList) list1).clone();// 拷贝集合做测试，此为深拷贝
+//        System.out.println(list3);
         //并集
         //list1.addAll(list2); // addAll命令，会把第2个list中的数据添加到第一个list中
         //System.out.println(list1);//[1111, 2222, 3333, 3333, 4444, 5555]
@@ -304,8 +308,12 @@ public class ArrayMain {
 //        System.out.println(b);
         //System.out.println(list1);//[3333]
         //差集
-//        list1.removeAll(list2);// removeAll命令，使用第一个list的内容去减第2个list，也就是说第1个list的结果保留第2个list中没有的内容。
-//        System.out.println(list1);//[1111, 2222]
+        list1.removeAll(list2);// removeAll命令，使用第一个list的内容去减第2个list，也就是说第1个list的结果保留第2个list中没有的内容，但是若第2个包含第1个， 那结果为[]
+//        System.out.println(list2);[1111, 2222, 3333, 4444, 5555]
+//        System.out.println(list1);//[]
+//        list2.removeAll(list3);
+//        System.out.println(list2);[4444, 5555]
+//        System.out.println(list3);[1111, 2222, 3333]
         //无重复并集
 //        list2.removeAll(list1);
 //        list1.addAll(list2);

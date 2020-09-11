@@ -1,7 +1,7 @@
 package com.ym.demo.controller;
 
 import com.ym.demo.service.ExceptionService;
-import com.ym.response.Result;
+import com.ym.demo.utils.Result;
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
