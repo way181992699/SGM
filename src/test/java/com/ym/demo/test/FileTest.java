@@ -6,6 +6,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mchange.io.FileUtils;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVReaderBuilder;
+import com.ym.demo.pojo.DataStat;
 import com.ym.demo.pojo.GetRiskPoint;
 import com.ym.demo.pojo.Student;
 import com.ym.demo.utils.CreateFileUtil;
@@ -50,6 +51,24 @@ public class FileTest {
         JavaType javaType = getCollectionType(ArrayList.class, Student.class);
         List<Student> lst = mapper.readValue(str, javaType);
         System.out.println(lst);
+    }
+
+    @Test//测试读取txt文件上的json格式数据
+    public void fun11() throws IOException {
+        String path = "D:\\wkx\\公司项目\\深圳项目\\智能预报\\文档\\库数据\\Ocean.txt";
+//        String data = "D:/Data";
+        String str = FileUtils.getContentsAsString(new File(path));
+        System.out.println(str);
+        //json反序列化为java类(报错,未完成.)
+        ObjectMapper mapper = new ObjectMapper();
+        JavaType javaType = getCollectionType(ArrayList.class, DataStat.class);
+        List<DataStat> lst = mapper.readValue(str, javaType);
+        for (DataStat dataStat : lst) {
+            System.out.println(dataStat.getKey());
+            System.out.println(dataStat.getCount());
+
+        }
+//        System.out.println(lst);
     }
 
     /**

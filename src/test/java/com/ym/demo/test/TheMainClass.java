@@ -6,13 +6,10 @@ import com.ym.demo.exception.BaseException;
 import com.ym.demo.pojo.GameS;
 import com.ym.demo.pojo.TestPojo1;
 import com.ym.demo.pojo.User;
-import com.ym.demo.utils.Judge;
-import com.ym.demo.utils.TDOA;
-import com.ym.demo.utils.idCardCheck.IdCardVerification;
+import com.ym.demo.utils.IdCardVerification;
 import org.junit.Test;
 
 import java.math.BigDecimal;
-import java.sql.Timestamp;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -21,9 +18,6 @@ import java.util.*;
  * 草稿类(随便测试玩玩)
  */
 public class TheMainClass {
-
-
-
 
 
     //T_LFS_WELFAREFORECASTDAYS
@@ -39,7 +33,6 @@ public class TheMainClass {
     }
 
 
-
     @Test
     public void fun5() {
         String a = "asdf";
@@ -51,7 +44,6 @@ public class TheMainClass {
         System.out.println(Boolean.valueOf(c));
         System.out.println(Boolean.valueOf(d));
     }
-
 
 
     @Test//比较接口和抽象类的自身的一些特性;
@@ -159,7 +151,6 @@ public class TheMainClass {
 //            map.put(szDenfence.getAreaName(), szDenfence);
 //        }
 //        return map;
-
 
 
     @Test//身份证校验 test
@@ -375,7 +366,7 @@ public class TheMainClass {
 
         int i = -1;
         for (int i1 = 0; i1 < 10; i1++) {
-            System.out.println(50-i);
+            System.out.println(50 - i);
             i--;
         }
     }
@@ -394,12 +385,7 @@ public class TheMainClass {
     }
 
 
-
-
-
 }
-
-
 
 
 // if (Judge.isChinese(e.getMessage().charAt(0))) {
