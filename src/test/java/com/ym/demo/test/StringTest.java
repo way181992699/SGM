@@ -253,4 +253,14 @@ public class StringTest {
     }
 
 
+    @Test
+    public void split01()  {
+       String a = "sdsdf.txt";
+        String[] split = a.split("\\.");
+        for (String s : split) {
+            System.out.println(s);
+        }
+        System.out.println(split[0]);
+    }
+
 }

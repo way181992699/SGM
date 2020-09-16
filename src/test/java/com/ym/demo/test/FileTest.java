@@ -10,6 +10,7 @@ import com.ym.demo.pojo.DataStat;
 import com.ym.demo.pojo.GetRiskPoint;
 import com.ym.demo.pojo.Student;
 import com.ym.demo.utils.CreateFileUtil;
+import jcifs.smb.NtlmPasswordAuthentication;
 import jcifs.smb.SmbFile;
 import org.junit.Test;
 
@@ -74,7 +75,7 @@ public class FileTest {
     }
 
 
-    @Test//测试读取txt文件上的json格式数据
+    @Test//测试读取txt文件上的json格式数据(http访问方式)
     public void fun111() throws IOException {
         String res = null;
         try {
@@ -94,13 +95,62 @@ public class FileTest {
                 bos.write(buffer, 0, len);
             }
             bos.close();
-           res= new String(bos.toByteArray(), "utf-8");
+            res = new String(bos.toByteArray(), "utf-8");
 
         } catch (Exception e) {
             System.out.println("通过url地址获取文本内容失败");
         }
-        System.out.println(res);
+
+        //json反序列化为java类(报错,未完成.)
+        ObjectMapper mapper = new ObjectMapper();
+        JavaType javaType = getCollectionType(ArrayList.class, DataStat.class);
+        List<DataStat> lst = mapper.readValue(res, javaType);
+        for (DataStat dataStat : lst) {
+            System.out.println(dataStat.getKey());
+            System.out.println(dataStat.getCount());
+
+        }
     }
+
+    @Test//测试读取txt文件上的json格式数据（smb访问方式）
+    public void fun1111() throws IOException {
+
+
+        String ip = "10.153.105.30";
+
+        String username = "zwh";
+
+        String password = "zwh@123";
+
+        String remoteurl = "/share/Data/BitDataStatistics/";
+
+        String url = "smb://" + ip + remoteurl;
+
+
+        try {
+
+            NtlmPasswordAuthentication auth = new NtlmPasswordAuthentication("", username, password);
+            SmbFile fp = new SmbFile(url, auth);
+            System.out.println(fp.exists());
+            String[] list = fp.list();
+            for (String s : list) {
+                System.out.println(s);
+            }
+//            int length = fp.getContentLength();// 得到文件的大小
+//            byte buffer[] = new byte[length];
+//            SmbFileInputStream in = new SmbFileInputStream(fp);
+//            // 建立smb文件输入流
+//            while ((in.read(buffer)) != -1) {
+//
+//                System.out.write(buffer);
+//                System.out.println(buffer.length);
+//            }
+//            in.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 
     /**
      * 获取泛型的Collection Type
