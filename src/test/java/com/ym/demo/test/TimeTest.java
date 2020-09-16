@@ -11,6 +11,9 @@ import java.util.*;
 
 public class TimeTest {
 
+    private final SimpleDateFormat sdfForYMD = new SimpleDateFormat("yyyyMMdd");
+    private final SimpleDateFormat sdfForYMDHM = new SimpleDateFormat("yyyyMMddHHmm");
+
     @Test
     public void simlpe() {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -116,8 +119,8 @@ public class TimeTest {
 
     @Test
     public void getLongList() {
-      long  timestamp = new Date().getTime();
-       int count = 3;
+        long timestamp = new Date().getTime();
+        int count = 3;
         List<Long> longList = new ArrayList<>();
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(timestamp);
@@ -141,7 +144,7 @@ public class TimeTest {
         SimpleDateFormat format = new SimpleDateFormat("YYYY-MM-dd HH:mm:ss");
         String year = format.format(1555473900000l);
         System.out.println(year);
-        long newestTime =1555379659000l;
+        long newestTime = 1555379659000l;
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(newestTime);
         calendar.set(calendar.MINUTE, 6);
@@ -214,7 +217,7 @@ public class TimeTest {
 
     @Test
     public void funZero() {
-        long l = System.currentTimeMillis()/(1000 * 3600 * 24) * (1000 * 3600 * 24) - TimeZone.getDefault().getRawOffset();
+        long l = System.currentTimeMillis() / (1000 * 3600 * 24) * (1000 * 3600 * 24) - TimeZone.getDefault().getRawOffset();
         System.out.println(new Timestamp(l));
     }
 
@@ -234,11 +237,11 @@ public class TimeTest {
         instance.setTimeInMillis(1598868000000L);
         System.out.println(new Timestamp(instance.getTimeInMillis()));
         int i = instance.get(Calendar.HOUR_OF_DAY);
-        instance.add(Calendar.DAY_OF_YEAR,1);
-        instance.set(Calendar.HOUR_OF_DAY,9);
+        instance.add(Calendar.DAY_OF_YEAR, 1);
+        instance.set(Calendar.HOUR_OF_DAY, 9);
         System.out.println(new Timestamp(instance.getTimeInMillis()));
         int i1 = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
-        System.out.println(i+1);
+        System.out.println(i + 1);
     }
 
     /**
@@ -310,7 +313,6 @@ public class TimeTest {
     }
 
 
-
     @Test//SimpleDateFomat里面的parse方法的使用
     public void SimpleDateFormatParse() {
         String date = "2018-11-09阿萨德刚";
@@ -324,12 +326,29 @@ public class TimeTest {
     }
 
     @Test//SimpleDateFomat里面的parse方法的使用
-    public void CalendarTest() {
+    public void CalendarTest() throws ParseException {
+
+//        private final SimpleDateFormat sdfForYMD = new SimpleDateFormat("yyyyMMdd");
+//        private final SimpleDateFormat sdfForYMDHM = new SimpleDateFormat("yyyyMMddHHmm");
+
         Calendar calendar = Calendar.getInstance();
+        calendar.setTimeInMillis(1598922000000l);
         int hour = calendar.get(calendar.HOUR_OF_DAY);
         int minute = calendar.get(calendar.MINUTE);
+
+        String mi = minute < 10 ? "0" + minute : minute + "";
+        String ho = hour < 10 ? "0" + hour : hour + "";
         Date time = calendar.getTime();
 
+        String today = sdfForYMD.format(new Date());
+
+        Date parse = sdfForYMDHM.parse(today + ho + mi);
+        long time1 = parse.getTime();
+        System.out.println(time1);
+
+        System.out.println(mi);
+        System.out.println(ho);
+        System.out.println("-----------");
         System.out.println(time);
         System.out.println(hour);
         System.out.println(minute);
