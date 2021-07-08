@@ -355,4 +355,11 @@ public class TimeTest {
         System.out.println(((hour - 1) * 60 + minute) / 6);
     }
 
+    @Test
+    public void  getMonthForDays(){
+        Calendar calendar = Calendar.getInstance();
+        calendar.getActualMaximum(Calendar)
+        int i = calendar.get(Calendar.MONTH);
+
+    }
 }
